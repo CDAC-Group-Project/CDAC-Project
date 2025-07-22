@@ -1,17 +1,46 @@
-# ASP.NET build directories
-bin/
-obj/
-
-# Node.js modules
+# Dependencies
 node_modules/
+.pnp/
+.pnp.js
 
-# User-specific files
-*.user
+# Testing
+coverage/
+
+# Production
+build/
+dist/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
 *.suo
-*.sln.ide
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # Logs
+logs/
 *.log
+npm-debug.log*
 
-# Environment variables
-.env
+# .NET
+bin/
+obj/
+*.user
+*.userosscache
+*.dbmdl
+*.jfm
+
+# Java
+target/
+.settings/
+.classpath
+.project
+*.jar
+*.war

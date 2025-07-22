@@ -1,428 +1,318 @@
-# Medical Portal Development - Table of Contents
+# Medical Portal Development Documentation
 
-This document provides a comprehensive table of contents for the development process of the Medical Portal, covering all aspects from project initiation to maintenance. It serves as a structured blueprint to guide the development team through the entire project lifecycle.
+This document provides comprehensive documentation for the development process of the Medical Portal, covering all aspects from project initiation to maintenance. It serves as a structured blueprint to guide the development team through the entire project lifecycle.
 
----
+## Table of Contents
 
-1. [Project Overview](#1-project-overview)
-   - 1.1. [Project Vision and Objectives](#11-project-vision-and-objectives)
-      - 1.1.1. Vision Statement
-      - 1.1.2. Core Objectives
-      - 1.1.3. Key Deliverables
-   - 1.2. [System Requirements](#12-system-requirements)
-      - 1.2.1. Functional Requirements
-      - 1.2.2. Non-Functional Requirements
-      - 1.2.3. Compliance Requirements (HIPAA)
-   - 1.3. [Stakeholders and Roles](#13-stakeholders-and-roles)
-      - 1.3.1. Product Owner Responsibilities
-      - 1.3.2. Development Team Roles
-      - 1.3.3. DevOps and Infrastructure Roles
-      - 1.3.4. Security and Compliance Team
-      - 1.3.5. Quality Assurance Team
-   - 1.4. [Success Metrics](#14-success-metrics)
-      - 1.4.1. System Performance Metrics
-      - 1.4.2. User Satisfaction Metrics
-      - 1.4.3. Compliance and Security Metrics
-      - 1.4.4. Development and Deployment Metrics
+1. [Project Overview](#project-overview)
+   - 1.1. [Project Vision and Objectives](#project-vision-and-objectives)
+      - 1.1.1. [Vision Statement](#vision-statement)
+      - 1.1.2. [Core Objectives](#core-objectives)
+      - 1.1.3. [Key Deliverables](#key-deliverables)
+   - 1.2. [System Requirements](#system-requirements)
+      - 1.2.1. [Functional Requirements](#functional-requirements)
+      - 1.2.2. [Non-Functional Requirements](#non-functional-requirements)
+      - 1.2.3. [Compliance Requirements (HIPAA)](#compliance-requirements-hipaa)
+   - 1.3. [Stakeholders and Roles](#stakeholders-and-roles)
+      - 1.3.1. [Product Owner Responsibilities](#product-owner-responsibilities)
+      - 1.3.2. [Development Team Roles](#development-team-roles)
+      - 1.3.3. [DevOps and Infrastructure Roles](#devops-and-infrastructure-roles)
+      - 1.3.4. [Security and Compliance Team](#security-and-compliance-team)
+      - 1.3.5. [Quality Assurance Team](#quality-assurance-team)
+   - 1.4. [Success Metrics](#success-metrics)
+      - 1.4.1. [System Performance Metrics](#system-performance-metrics)
+      - 1.4.2. [User Satisfaction Metrics](#user-satisfaction-metrics)
+      - 1.4.3. [Compliance and Security Metrics](#compliance-and-security-metrics)
+      - 1.4.4. [Development and Deployment Metrics](#development-and-deployment-metrics)
 
-2. [Project Setup](#2-project-setup)
-   - 2.1. [Prerequisites](#21-prerequisites)
-      - 2.1.1. Software Requirements
-      - 2.1.2. Hardware Requirements
-      - 2.1.3. Development Environment Tools
-   - 2.2. [Backend Services Setup](#22-backend-services-setup)
-      - 2.2.1. Setting up Spring Boot Services
-         - 2.2.1.1. Project Creation with Spring Initializer
-         - 2.2.1.2. Dependency Configuration
-         - 2.2.1.3. Application Properties Setup
-         - 2.2.1.4. Initial Project Structure
-      - 2.2.2. Setting up .NET Services
-         - 2.2.2.1. Project Creation with .NET CLI
-         - 2.2.2.2. NuGet Package Installation
-         - 2.2.2.3. Configuration of appsettings.json
-         - 2.2.2.4. Initial Project Structure
-   - 2.3. [Frontend Setup](#23-frontend-setup)
-      - 2.3.1. Creating Vite + React Project with JavaScript
-      - 2.3.2. Dependency Installation
-      - 2.3.3. Project Structure Configuration
-      - 2.3.4. Environment Variables Setup
-      - 2.3.5. Vite Configuration
-   - 2.4. [Database Setup](#24-database-setup)
-      - 2.4.1. SQL Server Setup (Docker)
-      - 2.4.2. MongoDB Setup (Docker)
-      - 2.4.3. Database Connection Configuration
-   - 2.5. [Message Broker Setup](#25-message-broker-setup)
-      - 2.5.1. RabbitMQ Setup (Docker)
-      - 2.5.2. Accessing RabbitMQ Management UI
-      - 2.5.3. Configuration for Services
-   - 2.6. [Development Tools](#26-development-tools)
-      - 2.6.1. IDE Setup (VS Code/IntelliJ)
-      - 2.6.2. Recommended VS Code Extensions
-      - 2.6.3. Git Configuration and .gitignore Setup
-   - 2.7. [Local Development](#27-local-development)
-      - 2.7.1. Starting Infrastructure with Docker Compose
-      - 2.7.2. Starting Backend Services
-      - 2.7.3. Starting Frontend Application
-      - 2.7.4. Accessing Service URLs
-      - 2.7.5. Debugging and Logging Setup
+2. [Project Setup](#project-setup)
+   - 2.1. [Prerequisites](#prerequisites)
+      - 2.1.1. [Software Requirements](#software-requirements)
+      - 2.1.2. [Hardware Requirements](#hardware-requirements)
+      - 2.1.3. [Development Environment Tools](#development-environment-tools)
+   - 2.2. [Backend Services Setup](#backend-services-setup)
+      - 2.2.1. [Setting up Spring Boot Services](#setting-up-spring-boot-services)
+         - 2.2.1.1. [Project Creation with Spring Initializer](#project-creation-with-spring-initializer)
+         - 2.2.1.2. [Dependency Configuration](#dependency-configuration)
+         - 2.2.1.3. [Application Properties Setup](#application-properties-setup)
+         - 2.2.1.4. [Initial Project Structure](#initial-spring-boot-project-structure)
+      - 2.2.2. [Setting up .NET Services](#setting-up-net-services)
+         - 2.2.2.1. [Project Creation with .NET CLI](#project-creation-with-net-cli)
+         - 2.2.2.2. [NuGet Package Installation](#nuget-package-installation)
+         - 2.2.2.3. [Configuration of appsettings.json](#configuration-of-appsettings)
+         - 2.2.2.4. [Initial Project Structure](#initial-net-project-structure)
+   - 2.3. [Frontend Setup](#frontend-setup)
+      - 2.3.1. [Creating Vite + React Project](#creating-vite-react-project)
+      - 2.3.2. [Dependency Installation](#dependency-installation)
+      - 2.3.3. [Project Structure Configuration](#project-structure-configuration)
+      - 2.3.4. [Environment Variables Setup](#environment-variables-setup)
+      - 2.3.5. [Vite Configuration](#vite-configuration)
+   - 2.4. [Database Setup](#database-setup)
+      - 2.4.1. [SQL Server Setup (Docker)](#sql-server-setup-docker)
+      - 2.4.2. [MongoDB Setup (Docker)](#mongodb-setup-docker)
+      - 2.4.3. [Database Connection Configuration](#database-connection-configuration)
+   - 2.5. [Message Broker Setup](#message-broker-setup)
+      - 2.5.1. [RabbitMQ Setup (Docker)](#rabbitmq-setup-docker)
+      - 2.5.2. [Accessing RabbitMQ Management UI](#accessing-rabbitmq-management-ui)
+      - 2.5.3. [Configuration for Services](#configuration-for-services)
+   - 2.6. [Development Tools](#development-tools)
+      - 2.6.1. [IDE Setup](#ide-setup)
+      - 2.6.2. [Recommended VS Code Extensions](#recommended-vs-code-extensions)
+      - 2.6.3. [Git Configuration and .gitignore Setup](#git-configuration-and-gitignore-setup)
+   - 2.7. [Local Development](#local-development)
+      - 2.7.1. [Starting Infrastructure with Docker Compose](#starting-infrastructure-with-docker-compose)
+      - 2.7.2. [Starting Backend Services](#starting-backend-services)
+      - 2.7.3. [Starting Frontend Application](#starting-frontend-application)
+      - 2.7.4. [Accessing Service URLs](#accessing-service-urls)
+      - 2.7.5. [Debugging and Logging Setup](#debugging-and-logging-setup)
 
-3. [System Architecture](#3-system-architecture)
-   - 3.1. [High-Level Architecture](#31-high-level-architecture)
-      - 3.1.1. Architecture Diagram
-      - 3.1.2. Component Overview
-      - 3.1.3. Technology Stack Summary
-   - 3.2. [Design Patterns & Best Practices](#32-design-patterns--best-practices)
-      - 3.2.1. Microservices Independence
-      - 3.2.2. Saga Pattern for Transactions
-      - 3.2.3. Outbox Pattern for Events
-      - 3.2.4. Event Choreography
-      - 3.2.5. Idempotency and Retry Handling
-   - 3.3. [System Integration](#33-system-integration)
-      - 3.3.1. Service Communication Protocols
-      - 3.3.2. External Integrations
-      - 3.3.3. API Gateway Functionality
-      - 3.3.4. Event Management
-   - 3.4. [Service-to-Service Communication](#34-service-to-service-communication)
-      - 3.4.1. Synchronous Communication (REST/gRPC)
-      - 3.4.2. Asynchronous Communication (RabbitMQ/Kafka)
-      - 3.4.3. Service Discovery and Load Balancing
-      - 3.4.4. Interoperability Standards
-   - 3.5. [API Gateway Configuration](#35-api-gateway-configuration)
-      - 3.5.1. Routing Configuration
-      - 3.5.2. Authentication and Authorization
-      - 3.5.3. Rate Limiting and Throttling
-      - 3.5.4. Protocol Translation
+3. [System Architecture](#system-architecture)
+   - 3.1. [High-Level Architecture](#high-level-architecture)
+      - 3.1.1. [Architecture Diagram](#architecture-diagram)
+      - 3.1.2. [Component Overview](#component-overview)
+      - 3.1.3. [Technology Stack Summary](#technology-stack-summary)
+   - 3.2. [Design Patterns & Best Practices](#design-patterns-and-best-practices)
+      - 3.2.1. [Microservices Independence](#microservices-independence)
+      - 3.2.2. [Saga Pattern for Transactions](#saga-pattern-for-transactions)
+      - 3.2.3. [Outbox Pattern for Events](#outbox-pattern-for-events)
+      - 3.2.4. [Event Choreography](#event-choreography)
+      - 3.2.5. [Idempotency and Retry Handling](#idempotency-and-retry-handling)
+   - 3.3. [System Integration](#system-integration)
+      - 3.3.1. [Service Communication Protocols](#service-communication-protocols)
+      - 3.3.2. [External Integrations](#external-integrations)
+      - 3.3.3. [API Gateway Functionality](#api-gateway-functionality)
+      - 3.3.4. [Event Management](#event-management)
+   - 3.4. [Service-to-Service Communication](#service-to-service-communication)
+      - 3.4.1. [Synchronous Communication](#synchronous-communication)
+      - 3.4.2. [Asynchronous Communication](#asynchronous-communication)
+      - 3.4.3. [Service Discovery and Load Balancing](#service-discovery-and-load-balancing)
+      - 3.4.4. [Interoperability Standards](#interoperability-standards)
+   - 3.5. [API Gateway Configuration](#api-gateway-configuration)
+      - 3.5.1. [Routing Configuration](#routing-configuration)
+      - 3.5.2. [Authentication and Authorization](#authentication-and-authorization)
+      - 3.5.3. [Rate Limiting and Throttling](#rate-limiting-and-throttling)
+      - 3.5.4. [Protocol Translation](#protocol-translation)
 
-4. [Backend Services Development](#4-backend-services-development)
-   - 4.1. [Core Services](#41-core-services)
-      - 4.1.1. Authentication Service (Spring Boot)
-         - 4.1.1.1. User Authentication Implementation
-         - 4.1.1.2. JWT Token Management
-         - 4.1.1.3. Role-Based Access Control
-      - 4.1.2. User Profile Service (Spring Boot)
-         - 4.1.2.1. Profile Management
-         - 4.1.2.2. Data Models
-         - 4.1.2.3. Business Logic Implementation
-      - 4.1.3. Health Records Service (.NET)
-         - 4.1.3.1. Medical Records Management
-         - 4.1.3.2. Document Handling
-         - 4.1.3.3. Privacy Controls
-      - 4.1.4. Notification Service (.NET)
-         - 4.1.4.1. Real-Time Notifications
-         - 4.1.4.2. SignalR Implementation
-         - 4.1.4.3. Event Processing
-      - 4.1.5. Additional Domain Services
-         - 4.1.5.1. Case Management Service
-         - 4.1.5.2. Billing Service
-         - 4.1.5.3. Report Service
-         - 4.1.5.4. Document Service
-   - 4.2. [Service Implementation](#42-service-implementation)
-      - 4.2.1. Development Guidelines
-      - 4.2.2. Error Handling Strategies
-      - 4.2.3. Logging Implementation
-      - 4.2.4. Performance Optimization
-   - 4.3. [Data Consistency Strategies](#43-data-consistency-strategies)
-      - 4.3.1. Distributed Transaction Handling
-         - 4.3.1.1. Saga Pattern Implementation
-         - 4.3.1.2. Outbox Pattern Implementation
-         - 4.3.1.3. Event Choreography
-      - 4.3.2. Idempotency and Retry Handling
-      - 4.3.3. Database Event Propagation
-      - 4.3.4. Message Broker Integration
-      - 4.3.5. Schema Evolution and Versioning
-   - 4.4. [API Documentation & Contracts](#44-api-documentation--contracts)
-      - 4.4.1. OpenAPI/Swagger Integration
-      - 4.4.2. gRPC Protobuf Schemas
-      - 4.4.3. Contract Testing with Pact
-      - 4.4.4. API Versioning and Deprecation
-      - 4.4.5. Request/Response Examples
+4. [Backend Services Development](#backend-services-development)
+   - 4.1. [Core Services](#core-services)
+      - 4.1.1. [Authentication Service](#authentication-service)
+         - 4.1.1.1. [User Authentication Implementation](#user-authentication-implementation)
+         - 4.1.1.2. [JWT Token Management](#jwt-token-management)
+         - 4.1.1.3. [Role-Based Access Control](#role-based-access-control)
+      - 4.1.2. [User Profile Service (Spring Boot)](#user-profile-service)
+         - 4.1.2.1. [Profile Management](#profile-management)
+         - 4.1.2.2. [Data Models](#data-models)
+         - 4.1.2.3. [Business Logic Implementation](#business-logic-implementation)
+      - 4.1.3. [Health Records Service (.NET)](#health-records-service)
+         - 4.1.3.1. [Medical Records Management](#medical-records-management)
+         - 4.1.3.2. [Document Handling](#document-handling)
+         - 4.1.3.3. [Privacy Controls](#privacy-controls)
+      - 4.1.4. [Notification Service (.NET)](#notification-service)
+         - 4.1.4.1. [Real-Time Notifications](#real-time-notifications)
+         - 4.1.4.2. [SignalR Implementation](#signalr-implementation)
+         - 4.1.4.3. [Event Processing](#event-processing)
+      - 4.1.5. [Additional Domain Services](#additional-domain-services)
+         - 4.1.5.1. [Case Management Service](#case-management-service)
+         - 4.1.5.2. [Billing Service](#billing-service)
+         - 4.1.5.3. [Report Service](#report-service)
+         - 4.1.5.4. [Document Service](#document-service)
+   - 4.2. [Service Implementation](#service-implementation)
+      - 4.2.1. [Development Guidelines](#development-guidelines)
+      - 4.2.2. [Error Handling Strategies](#error-handling-strategies)
+      - 4.2.3. [Logging Implementation](#logging-implementation)
+      - 4.2.4. [Performance Optimization](#performance-optimization)
+   - 4.3. [Data Consistency Strategies](#data-consistency-strategies)
+      - 4.3.1. [Distributed Transaction Handling](#distributed-transaction-handling)
+         - 4.3.1.1. [Saga Pattern Implementation](#saga-pattern-implementation)
+         - 4.3.1.2. [Outbox Pattern Implementation](#outbox-pattern-implementation)
+         - 4.3.1.3. [Event Choreography](#event-choreography)
+      - 4.3.2. [Idempotency and Retry Handling](#idempotency-and-retry-handling)
+      - 4.3.3. [Database Event Propagation](#database-event-propagation)
+      - 4.3.4. [Message Broker Integration](#message-broker-integration)
+      - 4.3.5. [Schema Evolution and Versioning](#schema-evolution-and-versioning)
+   - 4.4. [API Documentation & Contracts](#api-documentation--contracts)
+      - 4.4.1. [OpenAPI/Swagger Integration](#openapi-swagger-integration)
+      - 4.4.2. [gRPC Protobuf Schemas](#grpc-protobuf-schemas)
+      - 4.4.3. [Contract Testing with Pact](#contract-testing-with-pact)
+      - 4.4.4. [API Versioning and Deprecation](#api-versioning-and-deprecation)
+      - 4.4.5. [Request/Response Examples](#request-response-examples)
 
-5. [Frontend Development](#5-frontend-development)
-   - 5.1. [Project Structure](#51-project-structure)
-      - 5.1.1. Directory Layout
-      - 5.1.2. Feature-Based Organization
-      - 5.1.3. Component Hierarchy with PropTypes
-   - 5.2. [Real-Time Integration with SignalR](#52-real-time-integration-with-signalr)
-      - 5.2.1. SignalR Client Setup
-      - 5.2.2. Custom Hook for SignalR
-      - 5.2.3. Notification Handling
-      - 5.2.4. Chat Feature Implementation
-      - 5.2.5. Appointment Updates
-   - 5.3. [Data Fetching with React Query](#53-data-fetching-with-react-query)
-      - 5.3.1. API Client Configuration
-      - 5.3.2. Custom Hooks for Data Fetching
-      - 5.3.3. Cache Management
-      - 5.3.4. Error Handling in Queries
-   - 5.4. [Component Architecture](#54-component-architecture)
-      - 5.4.1. Common Components
-      - 5.4.2. Feature-Specific Components
-      - 5.4.3. Routing Components
-      - 5.4.4. State Management Components
-   - 5.5. [Environment Configuration](#55-environment-configuration)
-      - 5.5.1. Environment Variables
-      - 5.5.2. Vite Proxy Configuration
-      - 5.5.3. Production vs Development Setup
+5. [Frontend Development](#frontend-development)
+   - 5.1. [Project Structure](#project-structure)
+      - 5.1.1. [Directory Layout](#directory-layout)
+      - 5.1.2. [Feature-Based Organization](#feature-based-organization)
+      - 5.1.3. [Component Hierarchy with PropTypes](#component-hierarchy-with-proptypes)
+   - 5.2. [Real-Time Integration with SignalR](#real-time-integration-with-signalr)
+      - 5.2.1. [SignalR Client Setup](#signalr-client-setup)
+      - 5.2.2. [Custom Hook for SignalR](#custom-hook-for-signalr)
+      - 5.2.3. [Notification Handling](#notification-handling)
+      - 5.2.4. [Chat Feature Implementation](#chat-feature-implementation)
+      - 5.2.5. [Appointment Updates](#appointment-updates)
+   - 5.3. [Data Fetching with React Query](#data-fetching-with-react-query)
+      - 5.3.1. [API Client Configuration](#api-client-configuration)
+      - 5.3.2. [Custom Hooks for Data Fetching](#custom-hooks-for-data-fetching)
+      - 5.3.3. [Cache Management](#cache-management)
+      - 5.3.4. [Error Handling in Queries](#error-handling-in-queries)
+   - 5.4. [Component Architecture](#component-architecture)
+      - 5.4.1. [Common Components](#common-components)
+      - 5.4.2. [Feature-Specific Components](#feature-specific-components)
+      - 5.4.3. [Routing Components](#routing-components)
+      - 5.4.4. [State Management Components](#state-management-components)
+   - 5.5. [Environment Configuration](#environment-configuration)
+      - 5.5.1. [Environment Variables](#environment-variables)
+      - 5.5.2. [Vite Proxy Configuration](#vite-proxy-configuration)
+      - 5.5.3. [Production vs Development Setup](#production-vs-development-setup)
 
-6. [Security Implementation](#6-security-implementation)
-   - 6.1. [Authentication & Authorization](#61-authentication--authorization)
-      - 6.1.1. OAuth2/OpenID Connect Setup
-      - 6.1.2. JWT Token Management
-      - 6.1.3. Role-Based Access Control
-      - 6.1.4. Token Refresh and Revocation
-   - 6.2. [Data Security](#62-data-security)
-      - 6.2.1. Encryption Methods
-      - 6.2.2. Data Privacy Measures
-      - 6.2.3. HIPAA Compliance Requirements
-      - 6.2.4. Security Auditing
-   - 6.3. [API Security](#63-api-security)
-      - 6.3.1. API Authentication
-      - 6.3.2. Rate Limiting Implementation
-      - 6.3.3. Input Validation
-      - 6.3.4. Security Headers
+6. [Security Implementation](#security-implementation)
+   - 6.1. [Authentication & Authorization](#authentication--authorization)
+      - 6.1.1. [OAuth2/OpenID Connect Setup](#oauth2openid-connect-setup)
+      - 6.1.2. [JWT Token Management](#jwt-token-management)
+      - 6.1.3. [Role-Based Access Control](#role-based-access-control)
+      - 6.1.4. [Token Refresh and Revocation](#token-refresh-and-revocation)
+   - 6.2. [Data Security](#data-security)
+      - 6.2.1. [Encryption Methods](#encryption-methods)
+      - 6.2.2. [Data Privacy Measures](#data-privacy-measures)
+      - 6.2.3. [HIPAA Compliance Requirements](#hipaa-compliance-requirements)
+      - 6.2.4. [Security Auditing](#security-auditing)
+   - 6.3. [API Security](#api-security)
+      - 6.3.1. [API Authentication](#api-authentication)
+      - 6.3.2. [Rate Limiting Implementation](#rate-limiting-implementation)
+      - 6.3.3. [Input Validation](#input-validation)
+      - 6.3.4. [Security Headers](#security-headers)
 
-7. [Data Management](#7-data-management)
-   - 7.1. [Data Models](#71-data-models)
-      - 7.1.1. Entity Relationships
-      - 7.1.2. Schema Design
-      - 7.1.3. Data Validation Rules
-      - 7.1.4. Database Migration Strategy
-   - 7.2. [Data Flow](#72-data-flow)
-      - 7.2.1. Service Communication Flow
-      - 7.2.2. Event Processing Workflow
-      - 7.2.3. Data Synchronization
-      - 7.2.4. Error Handling in Data Flow
-   - 7.3. [Data Storage](#73-data-storage)
-      - 7.3.1. Database Selection (SQL Server/MongoDB)
-      - 7.3.# Medical Portal Development - Table of Contents
+7. [Data Management](#data-management)
+   - 7.1. [Data Models](#data-models)
+      - 7.1.1. [Entity Relationships](#entity-relationships)
+      - 7.1.2. [Schema Design](#schema-design)
+      - 7.1.3. [Data Validation Rules](#data-validation-rules)
+      - 7.1.4. [Database Migration Strategy](#database-migration-strategy)
+   - 7.2. [Data Flow](#data-flow)
+      - 7.2.1. [Service Communication Flow](#service-communication-flow)
+      - 7.2.2. [Event Processing Workflow](#event-processing-workflow)
+      - 7.2.3. [Data Synchronization](#data-synchronization)
+      - 7.2.4. [Error Handling in Data Flow](#error-handling-in-data-flow)
+   - 7.3. [Data Storage](#data-storage)
+      - 7.3.1. [Database Selection](#database-selection)
+      - 7.3.2. [Backup and Recovery Strategy](#backup-and-recovery-strategy)
+      - 7.3.3. [Monitoring and Maintenance](#monitoring-and-maintenance)
+      - 7.3.4. [Data Retention Policies](#data-retention-policies)
 
-1. [Project Overview](#1-project-overview)
-   - 1.1. [Project Vision and Objectives](#11-project-vision-and-objectives)
-      - 1.1.1. Vision Statement
-      - 1.1.2. Core Objectives
-      - 1.1.3. Key Deliverables
-   - 1.2. [System Requirements](#12-system-requirements)
-      - 1.2.1. Functional Requirements
-      - 1.2.2. Non-Functional Requirements
-      - 1.2.3. Technical Requirements
-      - 1.2.4. Compliance Requirements
+8. [Testing Strategy](#testing-strategy)
+   - 8.1. [Testing Framework](#testing-framework)
+      - 8.1.1. [Testing Architecture](#testing-architecture)
+      - 8.1.2. [Testing Tools Selection](#testing-tools-selection)
+      - 8.1.3. [Test Environment Setup](#test-environment-setup)
+      - 8.1.4. [Testing Standards](#testing-standards)
+   - 8.2. [Test Implementation](#test-implementation)
+      - 8.2.1. [Unit Testing](#unit-testing)
+      - 8.2.2. [Integration Testing](#integration-testing)
+      - 8.2.3. [End-to-End Testing](#end-to-end-testing)
+      - 8.2.4. [Performance Testing](#performance-testing)
+   - 8.3. [Quality Assurance](#quality-assurance)
+      - 8.3.1. [Code Quality Standards](#code-quality-standards)
+      - 8.3.2. [Test Coverage Goals](#test-coverage-goals)
+      - 8.3.3. [Automated Testing Pipeline](#automated-testing-pipeline)
+      - 8.3.4. [Testing Reports and Metrics](#testing-reports-and-metrics)
 
-2. [System Architecture](#2-system-architecture)
-   - 2.1. [Architecture Overview](#21-architecture-overview)
-      - 2.1.1. System Components
-      - 2.1.2. Architecture Patterns
-      - 2.1.3. Technology Stack
-      - 2.1.4. Integration Points
-   - 2.2. [Microservices Design](#22-microservices-design)
-      - 2.2.1. Service Boundaries
-      - 2.2.2. Communication Patterns
-      - 2.2.3. Data Ownership
-      - 2.2.4. Service Discovery
+9. [DevOps & Deployment](#devops--deployment)
+   - 9.1. [Infrastructure Setup](#infrastructure-setup)
+      - 9.1.1. [Cloud Architecture Configuration](#cloud-architecture-configuration)
+      - 9.1.2. [Network Setup](#network-setup)
+      - 9.1.3. [Resource Management](#resource-management)
+      - 9.1.4. [Environment Configuration](#environment-configuration)
+   - 9.2. [Deployment Pipeline](#deployment-pipeline)
+      - 9.2.1. [CI/CD Pipeline Setup](#cicd-pipeline-setup)
+      - 9.2.2. [Build Process](#build-process)
+      - 9.2.3. [Deployment Strategy](#deployment-strategy)
+      - 9.2.4. [Release Management](#release-management)
+   - 9.3. [Monitoring & Operations](#monitoring--operations)
+      - 9.3.1. [System Monitoring Tools](#system-monitoring-tools)
+      - 9.3.2. [Performance Metrics Collection](#performance-metrics-collection)
+      - 9.3.3. [Logging System Configuration](#logging-system-configuration)
+      - 9.3.4. [Alert Management](#alert-management)
 
-3. [Backend Services](#3-backend-services)
-   - 3.1. [Authentication Service](#31-authentication-service)
-      - 3.1.1. Service Architecture
-      - 3.1.2. Authentication Flow
-      - 3.1.3. Token Management
-      - 3.1.4. Role-Based Access Control
-   - 3.2. [User Profile Service](#32-user-profile-service)
-      - 3.2.1. Service Architecture
-      - 3.2.2. Profile Management
-      - 3.2.3. Role Assignment
-      - 3.2.4. Profile Data Schema
-   - 3.3. [Health Records Service](#33-health-records-service)
-      - 3.3.1. Service Architecture
-      - 3.3.2. Records Management
-      - 3.3.3. Privacy Controls
-      - 3.3.4. Data Schema
-   - 3.4. [Notification Service](#34-notification-service)
-      - 3.4.1. Service Architecture
-      - 3.4.2. Real-Time Notifications
-      - 3.4.3. Notification Storage
-      - 3.4.4. Delivery Mechanisms
+10. [Maintenance & Support](#maintenance--support)
+    - 10.1. [System Health](#system-health)
+       - 10.1.1. [Health Monitoring Tools](#health-monitoring-tools)
+       - 10.1.2. [Preventive Maintenance](#preventive-maintenance)
+       - 10.1.3. [System Updates](#system-updates)
+       - 10.1.4. [Performance Checks](#performance-checks)
+    - 10.2. [System Optimization](#system-optimization)
+       - 10.2.1. [Performance Tuning](#performance-tuning)
+       - 10.2.2. [Resource Optimization](#resource-optimization)
+       - 10.2.3. [Scaling Strategy](#scaling-strategy)
+       - 10.2.4. [Cost Optimization](#cost-optimization)
+    - 10.3. [Support Operations](#support-operations)
+       - 10.3.1. [Issue Resolution Process](#issue-resolution-process)
+       - 10.3.2. [Support Workflow](#support-workflow)
+       - 10.3.3. [Documentation Updates](#documentation-updates)
+       - 10.3.4. [Knowledge Base Management](#knowledge-base-management)
 
-4. [Frontend Implementation](#4-frontend-implementation)
-   - 4.1. [Frontend Architecture](#41-frontend-architecture)
-      - 4.1.1. Component Structure
-      - 4.1.2. State Management
-      - 4.1.3. Routing Strategy
-      - 4.1.4. API Integration
-   - 4.2. [User Interface Design](#42-user-interface-design)
-      - 4.2.1. Design System
-      - 4.2.2. Responsive Layout
-      - 4.2.3. Accessibility Compliance
-      - 4.2.4. Theme Configuration
-   - 4.3. [Real-Time Features](#43-real-time-features)
-      - 4.3.1. SignalR Integration
-      - 4.3.2. Real-Time Updates
-      - 4.3.3. Offline Support
-      - 4.3.4. Reconnection Handling
+11. [Development Guidelines](#development-guidelines)
+    - 11.1. [Development Standards](#development-standards)
+       - 11.1.1. [Coding Standards](#coding-standards)
+       - 11.1.2. [Architecture Guidelines](#architecture-guidelines)
+       - 11.1.3. [Documentation Requirements](#documentation-requirements)
+       - 11.1.4. [Code Review Process](#code-review-process)
+    - 11.2. [Version Control](#version-control)
+       - 11.2.1. [Git Workflow](#git-workflow)
+       - 11.2.2. [Branch Strategy](#branch-strategy)
+       - 11.2.3. [Release Process](#release-process)
+       - 11.2.4. [Version Management](#version-management)
+    - 11.3. [Contribution Guidelines](#contribution-guidelines)
+       - 11.3.1. [Development Process](#development-process)
+       - 11.3.2. [Submission Guidelines](#submission-guidelines)
+       - 11.3.3. [Code Review Requirements](#code-review-requirements)
+       - 11.3.4. [Quality Standards](#quality-standards)
 
-5. [API Design](#5-api-design)
-   - 5.1. [REST API Standards](#51-rest-api-standards)
-      - 5.1.1. Endpoint Design
-      - 5.1.2. Request/Response Format
-      - 5.1.3. Error Handling
-      - 5.1.4. Versioning Strategy
-   - 5.2. [GraphQL API](#52-graphql-api)
-      - 5.2.1. Schema Design
-      - 5.2.2. Query Structure
-      - 5.2.3. Mutation Design
-      - 5.2.4. Subscription Implementation
-   - 5.3. [gRPC Services](#53-grpc-services)
-      - 5.3.1. Service Definitions
-      - 5.3.2. Message Structure
-      - 5.3.3. Streaming Patterns
-      - 5.3.4. Error Handling
+12. [Troubleshooting & Support](#troubleshooting--support)
+    - 12.1. [Common Issues & Solutions](#common-issues--solutions)
+       - 12.1.1. [Pod Startup Failures](#pod-startup-failures)
+       - 12.1.2. [Network Connectivity Issues](#network-connectivity-issues)
+       - 12.1.3. [Authentication/Authorization Errors](#authenticationauthorization-errors)
+       - 12.1.4. [Data Consistency Issues](#data-consistency-issues)
+    - 12.2. [Debug Tools](#debug-tools)
+       - 12.2.1. [Kubernetes Dashboard](#kubernetes-dashboard)
+       - 12.2.2. [Logging Solutions](#logging-solutions)
+       - 12.2.3. [Monitoring Alerts](#monitoring-alerts)
+       - 12.2.4. [Tracing Tools](#tracing-tools)
+    - 12.3. [Support Contacts](#support-contacts)
+       - 12.3.1. [Technical Support](#technical-support)
+       - 12.3.2. [Developer Resources](#developer-resources)
+       - 12.3.3. [Team Contact Information](#team-contact-information)
 
-6. [Security Implementation](#6-security-implementation)
-   - 6.1. [Authentication Mechanisms](#61-authentication-mechanisms)
-      - 6.1.1. JWT Implementation
-      - 6.1.2. OAuth2 Integration
-      - 6.1.3. Multi-Factor Authentication
-      - 6.1.4. Session Management
-   - 6.2. [Authorization Framework](#62-authorization-framework)
-      - 6.2.1. Role-Based Access Control
-      - 6.2.2. Permission Management
-      - 6.2.3. Policy Enforcement
-      - 6.2.4. Resource Protection
-   - 6.3. [Data Security](#63-data-security)
-      - 6.3.1. Encryption Strategy
-      - 6.3.2. Data Masking
-      - 6.3.3. Secure Communication
-      - 6.3.4. Audit Logging
+13. [Version History](#version-history)
+    - 13.1. [Change Log](#change-log)
+       - 13.1.1. [Version Updates](#version-updates)
+       - 13.1.2. [Major Changes](#major-changes)
+       - 13.1.3. [Bug Fixes](#bug-fixes)
+    - 13.2. [Migration Guides](#migration-guides)
+       - 13.2.1. [Schema Migration Procedures](#schema-migration-procedures)
+       - 13.2.2. [Backward Compatibility Strategies](#backward-compatibility-strategies)
+       - 13.2.3. [Data Migration Plans](#data-migration-plans)
 
-7. [Data Management](#7-data-management)
-   - 7.1. [Database Design](#71-database-design)
-      - 7.1.1. Schema Design
-      - 7.1.2. Indexing Strategy
-      - 7.1.3. Query Optimization
-      - 7.1.4. Data Partitioning
-   - 7.2. [Data Access Layer](#72-data-access-layer)
-      - 7.2.1. ORM Configuration
-      - 7.2.2. Repository Pattern
-      - 7.2.3. Query Builders
-      - 7.2.4. Connection Management
-   - 7.3. [Data Backup & Recovery](#73-data-backup--recovery)
-      - 7.3.1. Backup Strategy
-      - 7.3.2. Recovery Procedures
-      - 7.3.3. Backup Procedures
-      - 7.3.4. Data Retention Policies
-
-8. [Testing Strategy](#8-testing-strategy)
-   - 8.1. [Testing Framework](#81-testing-framework)
-      - 8.1.1. Testing Architecture
-      - 8.1.2. Testing Tools Selection
-      - 8.1.3. Test Environment Setup
-      - 8.1.4. Testing Standards
-   - 8.2. [Test Implementation](#82-test-implementation)
-      - 8.2.1. Unit Testing
-      - 8.2.2. Integration Testing
-      - 8.2.3. End-to-End Testing
-      - 8.2.4. Performance Testing
-   - 8.3. [Quality Assurance](#83-quality-assurance)
-      - 8.3.1. Code Quality Standards
-      - 8.3.2. Test Coverage Goals
-      - 8.3.3. Automated Testing Pipeline
-      - 8.3.4. Testing Reports and Metrics
-
-9. [DevOps & Deployment](#9-devops--deployment)
-   - 9.1. [Infrastructure Setup](#91-infrastructure-setup)
-      - 9.1.1. Cloud Architecture Configuration
-      - 9.1.2. Network Setup
-      - 9.1.3. Resource Management
-      - 9.1.4. Environment Configuration
-   - 9.2. [Deployment Pipeline](#92-deployment-pipeline)
-      - 9.2.1. CI/CD Pipeline Setup
-      - 9.2.2. Build Process
-      - 9.2.3. Deployment Strategy
-      - 9.2.4. Release Management
-   - 9.3. [Monitoring & Operations](#93-monitoring--operations)
-      - 9.3.1. System Monitoring Tools
-      - 9.3.2. Performance Metrics Collection
-      - 9.3.3. Logging System Configuration
-      - 9.3.4. Alert Management
-
-10. [Maintenance & Support](#10-maintenance--support)
-    - 10.1. [System Health](#101-system-health)
-       - 10.1.1. Health Monitoring Tools
-       - 10.1.2. Preventive Maintenance
-       - 10.1.3. System Updates
-       - 10.1.4. Performance Checks
-    - 10.2. [System Optimization](#102-system-optimization)
-       - 10.2.1. Performance Tuning
-       - 10.2.2. Resource Optimization
-       - 10.2.3. Scaling Strategy
-       - 10.2.4. Cost Optimization
-    - 10.3. [Support Operations](#103-support-operations)
-       - 10.3.1. Issue Resolution Process
-       - 10.3.2. Support Workflow
-       - 10.3.3. Documentation Updates
-       - 10.3.4. Knowledge Base Management
-
-11. [Development Guidelines](#11-development-guidelines)
-    - 11.1. [Development Standards](#111-development-standards)
-       - 11.1.1. Coding Standards
-       - 11.1.2. Architecture Guidelines
-       - 11.1.3. Documentation Requirements
-       - 11.1.4. Code Review Process
-    - 11.2. [Version Control](#112-version-control)
-       - 11.2.1. Git Workflow
-       - 11.2.2. Branch Strategy
-       - 11.2.3. Release Process
-       - 11.2.4. Version Management
-    - 11.3. [Contribution Guidelines](#113-contribution-guidelines)
-       - 11.3.1. Development Process
-       - 11.3.2. Submission Guidelines
-       - 11.3.3. Code Review Requirements
-       - 11.3.4. Quality Standards
-
-12. [Troubleshooting & Support](#12-troubleshooting--support)
-    - 12.1. [Common Issues & Solutions](#121-common-issues--solutions)
-       - 12.1.1. Pod Startup Failures
-       - 12.1.2. Network Connectivity Issues
-       - 12.1.3. Authentication/Authorization Errors
-       - 12.1.4. Data Consistency Issues
-    - 12.2. [Debug Tools](#122-debug-tools)
-       - 12.2.1. Kubernetes Dashboard
-       - 12.2.2. Logging Solutions
-       - 12.2.3. Monitoring Alerts
-       - 12.2.4. Tracing Tools
-    - 12.3. [Support Contacts](#123-support-contacts)
-       - 12.3.1. Technical Support
-       - 12.3.2. Developer Resources
-       - 12.3.3. Team Contact Information
-
-13. [Version History](#13-version-history)
-    - 13.1. [Change Log](#131-change-log)
-       - 13.1.1. Version Updates
-       - 13.1.2. Major Changes
-       - 13.1.3. Bug Fixes
-    - 13.2. [Migration Guides](#132-migration-guides)
-       - 13.2.1. Schema Migration Procedures
-       - 13.2.2. Backward Compatibility Strategies
-       - 13.2.3. Data Migration Plans
-
-14. [Documentation Structure](#14-documentation-structure)
-    - 14.1. [File Organization](#141-file-organization)
-       - 14.1.1. Project Fundamentals
-       - 14.1.2. System Architecture
-       - 14.1.3. Backend Services
-       - 14.1.4. Frontend Implementation
-       - 14.1.5. Security Protocols
-       - 14.1.6. Data Management
-       - 14.1.7. Testing Strategies
-       - 14.1.8. DevOps and Deployment
-       - 14.1.9. Maintenance and Support
-       - 14.1.10. Development Guidelines
-    - 14.2. [File Split Suggestions](#142-file-split-suggestions)
-       - 14.2.1. Architecture Files
-       - 14.2.2. Service Implementation Files
-       - 14.2.3. Security Files
-       - 14.2.4. Data Management Files
-       - 14.2.5. Deployment Files
+14. [Documentation Structure](#documentation-structure)
+    - 14.1. [File Organization](#file-organization)
+       - 14.1.1. [Project Fundamentals](#project-fundamentals)
+       - 14.1.2. [System Architecture](#system-architecture)
+       - 14.1.3. [Backend Services](#backend-services)
+       - 14.1.4. [Frontend Implementation](#frontend-implementation)
+       - 14.1.5. [Security Protocols](#security-protocols)
+       - 14.1.6. [Data Management](#data-management)
+       - 14.1.7. [Testing Strategies](#testing-strategies)
+       - 14.1.8. [DevOps and Deployment](#devops-and-deployment)
+       - 14.1.9. [Maintenance and Support](#maintenance-and-support)
+       - 14.1.10. [Development Guidelines](#development-guidelines)
+    - 14.2. [File Split Suggestions](#file-split-suggestions)
+       - 14.2.1. [Architecture Files](#architecture-files)
+       - 14.2.2. [Service Implementation Files](#service-implementation-files)
+       - 14.2.3. [Security Files](#security-files)
+       - 14.2.4. [Data Management Files](#data-management-files)
+       - 14.2.5. [Deployment Files](#deployment-files)
 
 ---
 
+# Content Sections
 
 ## 1. Project Overview
 
@@ -494,7 +384,7 @@ The document emphasizes HIPAA compliance, with the following requirements:
 
 #### 1.3.2. Development Team Roles
 - **Backend Developers (Java)**: Develop and maintain Spring Boot services (e.g., Authentication, User Profile, API Gateway).
-- **Backend Developers (.NET)*- **Backend Developers (.NET)**: Develop and maintain .NET services (e.g., Health Records, Notification).
+- **Backend Developers (.NET)**: Develop and maintain .NET services (e.g., Health Records, Notification).
 - **Frontend Developers**: Build and maintain the React-based frontend, integrating with REST/GraphQL APIs and SignalR.
 - **Full-Stack Developers**: Contribute to both backend and frontend development, ensuring seamless integration.
 
@@ -537,10 +427,546 @@ The document emphasizes HIPAA compliance, with the following requirements:
 - **Build Success Rate**: Maintain a 95% success rate for CI/CD pipeline builds, tracked via GitHub Actions/Azure DevOps.
 - **Mean Time to Recovery (MTTR)**: Resolve production issues within 1 hour, monitored via incident response tools.
 
----
+## 2. Project Setup
 
-### Diagram: High-Level Architecture
-The document includes a high-level architecture diagram under the **High-Level Architecture** section, which is relevant to the **Project Overview** as it visually represents the system's structure. The diagram is reproduced below in its original ASCII format:
+### 2.1. Prerequisites
+
+#### 2.1.1. Software Requirements
+Required software for development:
+- Java Development Kit (JDK) 17 or later
+- .NET SDK 8.0 or later
+- Node.js 18.x or later
+- Docker Desktop
+- Git
+- Visual Studio Code or preferred IDE
+- SQL Server Management Studio (SSMS)
+- MongoDB Compass
+
+#### 2.1.2. Hardware Requirements
+Minimum specifications for development:
+- 16GB RAM
+- 4 CPU cores
+- 256GB SSD storage
+- High-speed internet connection
+
+#### 2.1.3. Development Environment Tools
+Essential tools and configurations:
+- Network access to development servers and resources
+- Access rights to code repositories
+- VPN configuration for remote access
+- SSL certificates for local development
+- Environment variables configuration
+- Docker Desktop for containerization
+- Git with configured global settings
+- Visual Studio Code with extensions
+- Postman for API testing
+- MongoDB Compass for database management
+
+### 2.2. Backend Services Setup
+
+#### 2.2.1. Setting up Spring Boot Services
+
+##### 2.2.1.1. Project Creation with Spring Initializer
+Create Spring Boot services using Spring Initializer with required dependencies:
+```bash
+curl https://start.spring.io/starter.zip -d dependencies=web,data-jpa,security -d language=java -d bootVersion=3.1.0 -o spring-boot-service.zip
+```
+
+##### 2.2.1.2. Dependency Configuration
+Add necessary dependencies to the `pom.xml` file:
+```xml
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-api</artifactId>
+        <version>0.11.5</version>
+    </dependency>
+    <dependency>
+        <groupId>com.microsoft.sqlserver</groupId>
+        <artifactId>mssql-jdbc</artifactId>
+        <scope>runtime</scope>
+    </dependency>
+</dependencies>
+```
+
+##### 2.2.1.3. Application Properties Setup
+Configure `application.properties` or `application.yml` for Spring Boot services:
+```yaml
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=medical_db;encrypt=true;trustServerCertificate=true
+    username: sa
+    password: YourStrong@Passw0rd
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+  security:
+    jwt:
+      secret: your-secret-key-here
+      expiration: 86400000
+
+server:
+  port: 8080
+```
+
+##### 2.2.1.4. Initial Project Structure
+Standard Spring Boot project structure:
+```plaintext
+src/
+├── main/
+│   ├── java/
+│   │   └── com/medical/
+│   │       ├── config/
+│   │       ├── controller/
+│   │       ├── model/
+│   │       ├── repository/
+│   │       └── service/
+│   └── resources/
+│       └── application.properties
+└── test/
+    └── java/
+```
+
+#### 2.2.2. Setting up .NET Services
+
+##### 2.2.2.1. Project Creation with .NET CLI
+Create .NET services using the CLI:
+```powershell
+dotnet new webapi -n HealthRecordsService
+cd HealthRecordsService
+```
+
+##### 2.2.2.2. NuGet Package Installation
+Install required NuGet packages:
+```powershell
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+dotnet add package Microsoft.AspNetCore.SignalR
+dotnet add package Swashbuckle.AspNetCore
+dotnet add package MongoDB.Driver
+```
+
+##### 2.2.2.3. Configuration of appsettings.json
+Configure `appsettings.json` for .NET services:
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost,1433;Database=medical_db;User Id=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=True;"
+  },
+  "MongoDb": {
+    "ConnectionString": "mongodb://localhost:27017",
+    "DatabaseName": "medical_portal"
+  },
+  "Jwt": {
+    "Key": "your-secret-key-here",
+    "Issuer": "medical-portal",
+    "Audience": "medical-portal-api",
+    "ExpiryMinutes": 1440
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}
+```
+
+##### 2.2.2.4. Initial Project Structure
+Standard .NET project structure:
+```plaintext
+HealthRecordsService/
+├── Controllers/
+├── Models/
+├── Services/
+├── Repositories/
+├── Hubs/
+├── appsettings.json
+└── Program.cs
+```
+
+### 2.3. Frontend Setup
+
+#### 2.3.1. Creating Vite + React Project
+1. Create a new Vite project with React template:
+```bash
+npm create vite@latest medical-portal --template react
+cd medical-portal
+```
+
+2. Initialize the project:
+```bash
+npm install
+```
+
+#### 2.3.2. Dependency Installation
+Install required dependencies:
+```bash
+npm install @microsoft/signalr @tanstack/react-query axios react-router-dom
+npm install @mui/material @emotion/react @emotion/styled
+npm install date-fns prop-types react-hook-form
+npm install -D prettier eslint-config-prettier vitest @testing-library/react msw
+```
+
+#### 2.3.3. Project Structure Configuration
+Frontend project structure:
+```plaintext
+src/
+├── assets/            # Static assets (images, fonts)
+├── components/        # Reusable UI components
+│   ├── common/        # Shared components (buttons, inputs, etc.)
+│   ├── features/      # Feature-specific components
+│   └── layouts/       # Layout components (headers, footers, etc.)
+├── config/           # Configuration files
+├── contexts/         # React context providers
+├── hooks/            # Custom React hooks
+├── pages/            # Page components for each route
+│   ├── patient/      # Patient-specific pages
+│   ├── doctor/       # Doctor-specific pages
+│   └── admin/        # Admin-specific pages
+├── services/         # API service wrappers
+├── utils/            # Utility functions
+└── App.jsx          # Main application component
+```
+
+#### 2.3.4. Environment Variables Setup
+Environment configuration files:
+```plaintext
+# .env.development
+VITE_API_URL=http://localhost:5000
+VITE_SIGNALR_URL=http://localhost:5000/hubs
+
+# .env.production
+VITE_API_URL=https://api.medical-portal.com
+VITE_SIGNALR_URL=https://api.medical-portal.com/hubs
+```
+
+#### 2.3.5. Vite Configuration
+Configure `vite.config.js`:
+```javascript
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+      '/hubs': {
+        target: 'http://localhost:5000',
+        ws: true,
+      },
+    },
+  },
+});
+```
+
+### 2.4. Database Setup
+
+#### 2.4.1. SQL Server Setup (Docker)
+1. Pull SQL Server Docker image:
+```bash
+docker pull mcr.microsoft.com/mssql/server:2022-latest
+```
+
+2. Run SQL Server container:
+```bash
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=YourStrongPassword123" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
+```
+
+#### 2.4.2. MongoDB Setup (Docker)
+1. Pull MongoDB Docker image:
+```bash
+docker pull mongo:latest
+```
+
+2. Run MongoDB container:
+```bash
+docker run -d -p 27017:27017 --name mongodb mongo:latest
+```
+
+#### 2.4.3. Database Connection Configuration
+1. SQL Server connection string (appsettings.json):
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=MedicalPortal;User Id=sa;Password=YourStrongPassword123;TrustServerCertificate=True"
+  }
+}
+```
+
+2. MongoDB connection string (appsettings.json):
+```json
+{
+  "MongoDb": {
+    "ConnectionString": "mongodb://localhost:27017",
+    "DatabaseName": "MedicalPortal"
+  }
+}
+```
+
+### 2.5. Message Broker Setup
+
+#### 2.5.1. RabbitMQ Setup (Docker)
+1. Pull RabbitMQ Docker image with management plugin:
+```bash
+docker pull rabbitmq:3-management
+```
+
+2. Run RabbitMQ container:
+```bash
+docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+```
+
+#### 2.5.2. Accessing RabbitMQ Management UI
+1. Open the management interface in your browser:
+```
+http://localhost:15672
+```
+2. Login with default credentials:
+- Username: guest
+- Password: guest
+
+#### 2.5.3. Configuration for Services
+1. Spring Boot service configuration (application.properties):
+```properties
+spring.rabbitmq.host=localhost
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=guest
+spring.rabbitmq.password=guest
+```
+
+2. .NET service configuration (appsettings.json):
+```json
+{
+  "RabbitMQ": {
+    "HostName": "localhost",
+    "Port": 5672,
+    "UserName": "guest",
+    "Password": "guest"
+  }
+}
+```
+
+### 2.6. Development Tools
+
+#### 2.6.1. IDE Setup
+Configure Visual Studio Code:
+- Install essential extensions for development
+- Set up debugging configurations for all services
+- Configure editor settings for code formatting and linting
+
+#### 2.6.2. Recommended VS Code Extensions
+Essential extensions for development:
+- **Code Quality**:
+  - ESLint and Prettier for code formatting
+  - SonarLint for code analysis
+- **Backend Development**:
+  - C# Dev Kit for .NET development
+  - REST Client for API testing
+- **Frontend Development**:
+  - ES7+ React/Redux/React-Native snippets
+  - Vite for frontend tooling
+- **Database Tools**:
+  - MongoDB for VS Code
+  - SQL Server for VS Code
+- **Infrastructure**:
+  - Docker for container management
+  - Kubernetes for deployment
+- **Version Control**:
+  - GitLens for enhanced Git integration
+  - Git History for visualization
+- **Collaboration**:
+  - Live Share for pair programming
+  - Remote Development for containerized dev
+
+#### 2.6.3. Git Configuration and .gitignore Setup
+1. Configure Git user settings:
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
+2. Create .gitignore file:
+```plaintext
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Testing
+coverage/
+
+# Production
+build/
+dist/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# .NET
+bin/
+obj/
+*.user
+*.userosscache
+*.dbmdl
+*.jfm
+
+# Java
+target/
+.settings/
+.classpath
+.project
+*.jar
+*.war
+```
+
+### 2.7. Local Development
+
+#### 2.7.1. Starting Infrastructure with Docker Compose
+1. Create `docker-compose.yml` to manage infrastructure services:
+```yaml
+version: '3.8'
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrongPassword123
+    ports:
+      - "1433:1433"
+  
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+  
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+```
+
+2. Start all infrastructure services:
+```bash
+docker-compose up -d
+```
+
+#### 2.7.2. Starting Backend Services
+1. Start Spring Boot services:
+```bash
+# From user-service directory
+./mvnw spring-boot:run
+
+# From auth-service directory
+./mvnw spring-boot:run
+```
+
+2. Start .NET services:
+```powershell
+# From HealthRecordsService directory
+dotnet run
+```
+
+#### 2.7.3. Starting Frontend Application
+Start the Vite development server:
+```bash
+cd medical-portal
+npm run dev
+```
+
+#### 2.7.4. Accessing Service URLs
+- Frontend: http://localhost:3000
+- API Gateway: http://localhost:5000
+- User Service: http://localhost:8081
+- Auth Service: http://localhost:8082
+- Health Records Service: http://localhost:5001
+- RabbitMQ Management: http://localhost:15672
+
+#### 2.7.5. Debugging and Logging Setup
+1. Configure VS Code debugging for .NET:
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Core Launch (web)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/bin/Debug/net8.0/HealthRecordsService.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      }
+    }
+  ]
+}
+```
+
+2. Configure VS Code debugging for Node.js:
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Frontend",
+      "program": "${workspaceFolder}/node_modules/vite/bin/vite.js",
+      "args": ["--mode", "development"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}
+```
+## 3. System Architecture
+
+### 3.1. High-Level Architecture
+
+#### 3.1.1. Architecture Diagram
+The system's high-level architecture is represented in the following diagram:
 
 ```
 +---------------------------------------------------------------+
@@ -588,152 +1014,308 @@ The document includes a high-level architecture diagram under the **High-Level A
 +------------+------------+------------+----------------------+
 ```
 
-**Description**:
-- **Frontend (React)**:
-  - **Patient Portal**: Interface for patients to view their health records, appointments, and billing information.
-  - **Doctor Portal**: Interface for doctors to manage patient records, appointments, and treatment plans.
-  - **Admin Dashboard**: Interface for administrators to manage system settings, user accounts, and generate reports.
+#### 3.1.2. Component Overview
+The Medical Portal implements a modern, cloud-native distributed system architecture that ensures scalability, maintainability, and security.
 
-- **API Gateway (Spring Cloud)**: Handles routing, authentication, rate limiting, and protocol translation (REST/GraphQL).
+##### Frontend Layer
+- **Patient Portal**: Self-service interface for viewing health records, appointments, and billing
+- **Doctor Portal**: Clinical interface for managing patient records and treatment plans
+- **Admin Dashboard**: System management interface for settings and reporting
 
-- **Auth Service (Spring Boot)**: Manages user authentication and sessions with Role-Based Access Control (RBAC) for Patient, Doctor, and Admin roles.
+##### API Gateway Layer
+- **Spring Cloud Gateway**: Central entry point for all client requests
+- Implements routing, authentication, rate limiting
+- Supports REST and GraphQL interfaces
+- Enforces security policies and HSTS
 
-- **User Profile Service (Spring Boot)**: Manages user profiles with different data schemas for patients, doctors, and administrators.
+##### Core Services
+- **Auth Service** (Spring Boot):
+  - User authentication and RBAC
+  - JWT token management
+  - OAuth2/OpenID Connect integration
+  
+- **User Profile Service** (Spring Boot):
+  - Profile management for all user types
+  - SQL Server for structured data storage
+  - Business logic for user management
+  
+- **Health Records Service** (.NET):
+  - Medical records management
+  - Document handling with privacy controls
+  - HIPAA-compliant data access
+  
+- **Notification Service** (.NET):
+  - Real-time notifications via SignalR
+  - MongoDB for flexible notification storage
+  - Event-driven architecture
 
-- **Health Records Service (.NET Core)**: Manages medical records with privacy controls and role-based access permissions.
+- **Additional Services**:
+  - Case Service (Spring Boot)
+  - Billing Service (.NET)
+  - Admin Service (Spring Boot)
 
-- **Notification Service (.NET Core)**: Delivers role-specific real-time notifications to patients, doctors, and administrators.
+##### Infrastructure Layer
+- Redis for caching
+- Elasticsearch for centralized logging
+- Cloud Storage (S3/Blob) for documents
+- RabbitMQ for event-driven communication
+- OAuth2 provider for authentication
 
-- **Case Service (Spring Boot)**: Manages medical cases and assignments between doctors and patients.
-
-- **Billing Service (.NET Core)**: Handles billing and payment processing for patient services.
-
-- **Admin Service (Spring Boot)**: Provides administrative functions for system management, reporting, and user administration.
-
-- **Shared Infrastructure**: Includes Redis for caching, Elasticsearch for logs, Cloud Storage for files, Message Broker (RabbitMQ) for event-driven communication, and Identity Provider for OAuth2.
-
-- **Monitoring & Observability**: Includes Prometheus for metrics collection, Grafana for dashboards, Jaeger for distributed tracing, and PagerDuty/Slack for alerts.
-
----
-
-## 2. Project Setup
-
-### 2.3. Frontend Setup
-
-#### 2.3.1. Creating Vite + React Project with JavaScript
-Create a React project using Vite for fast development with JavaScript:
-```bash
-npm create vite@latest medical-portal --template react
-cd medical-portal
-```
-This command sets up a Vite-based React project with JavaScript, named `medical-portal`.
-
-#### 2.3.2. Dependency Installation
-Install the following dependencies to support real-time communication, data fetching, UI components, and testing:
-```bash
-npm install @microsoft/signalr @tanstack/react-query axios react-router-dom
-npm install @mui/material @emotion/react @emotion/styled
-npm install date-fns prop-types react-hook-form
-npm install -D prettier eslint-config-prettier vitest @testing-library/react msw
-```
-These dependencies include:
-- **@microsoft/signalr**: For real-time communication
-- **@tanstack/react-query**: For data fetching and caching
-- **axios**: For HTTP requests
-- **react-router-dom**: For client-side routing
-- **@mui/material**: For Material-UI components
-- **prop-types**: For runtime type checking of React props
-- **date-fns, react-hook-form**: For date handling and form management
-- **Testing tools**: For unit and integration testing
-
-#### 2.3.3. Project Structure Configuration
-Configure the frontend project structure to organize code effectively:
-```plaintext
-src/
-├── assets/            # Static assets (images, fonts)
-├── components/        # Reusable UI components
-│   ├── common/        # Shared components (buttons, inputs, etc.)
-│   ├── features/      # Feature-specific components
-│   └── layouts/       # Layout components (headers, footers, etc.)
-├── config/            # Configuration files
-├── contexts/          # React context providers
-├── hooks/             # Custom React hooks
-├── pages/             # Page components for each route
-│   ├── patient/       # Patient-specific pages
-│   ├── doctor/        # Doctor-specific pages
-│   └── admin/         # Admin-specific pages
-├── services/          # API service wrappers
-├── utils/             # Utility functions
-└── App.jsx            # Main application component
-```
-
-This structure separates concerns and organizes code by feature and user role, making it easier to maintain and scale the application.
-
-#### 2.3.4. Environment Variables Setup
-Create environment files to manage development and production configurations:
-```plaintext
-# .env.development
-VITE_API_URL=http://localhost:5000
-VITE_SIGNALR_URL=http://localhost:5000/hubs
-
-# .env.production
-VITE_API_URL=https://api.medical-portal.com
-VITE_SIGNALR_URL=https://api.medical-portal.com/hubs
-```
-These files define API and SignalR endpoints for development and production environments.
-
-#### 2.3.5. Vite Configuration
-Configure the `vite.config.js` file to set up proxying for backend services and WebSocket connections:
-```javascript
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-
-export default defineConfig({
-  plugins: [react()],
-  server: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:5000',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
-      },
-      '/hubs': {
-        target: 'http://localhost:5000',
-        ws: true,
-      },
-    },
-  },
-});
-```
-This configuration proxies API requests to the backend and enables WebSocket connections for SignalR.
-
----
-
-## 3. System Architecture
-
-### 3.1. High-Level Architecture
+##### Monitoring Layer
+- Prometheus for metrics collection
+- Grafana for visualization dashboards
+- Jaeger for distributed tracing
+- PagerDuty/Slack for alerts
 
 #### 3.1.3. Technology Stack Summary
-The technology stack for the Medical Portal includes:
-- **Frontend**: React, JavaScript, Vite, SignalR client, React Query, Material-UI, Axios, React Router, PropTypes
-- **Backend**:
-  - **Java Services**: Spring Boot 3.1.x, Spring Data JPA, Spring Security, Spring Cloud Gateway, JJWT, Spring AMQP
-  - **.NET Services**: .NET 7.0, ASP.NET Core, Entity Framework Core, SignalR, RabbitMQ.Client, Swashbuckle.AspNetCore
-- **Databases**:
-  - **SQL Server**: For transactional data (e.g., user profiles, medical records)
-  - **MongoDB**: For flexible, non-relational data (e.g., notifications)
-- **Message Broker**: RabbitMQ (primary) or Kafka (alternative) for event-driven communication
-- **DevOps**: Docker, Kubernetes, GitHub Actions/Azure DevOps for CI/CD, Prometheus, Grafana, ELK/EFK stack for monitoring
-- **Security**: OAuth2/OpenID Connect, JWT, AES encryption, TLS/mTLS
-- **API Documentation**: OpenAPI/Swagger for REST, Protobuf for gRPC
 
----
+##### Frontend Technologies
+- React with Vite for build tooling
+- SignalR client for real-time features
+- React Query for data fetching
+- Material-UI for components
+- Axios for HTTP requests
+- React Router for navigation
+- PropTypes for type checking
 
+##### Backend Technologies
+- **Java Services**:
+  - Spring Boot 3.1.x
+  - Spring Data JPA
+  - Spring Security
+  - Spring Cloud Gateway
+  - JJWT
+  - Spring AMQP
+  
+- **.NET Services**:
+  - .NET 7.0
+  - ASP.NET Core
+  - Entity Framework Core
+  - SignalR
+  - RabbitMQ.Client
+  - Swashbuckle.AspNetCore
+
+##### Data Storage
+- SQL Server for transactional data
+- MongoDB for flexible schemas
+- Redis for caching
+- S3/Blob storage for files
+
+##### Infrastructure & DevOps
+- Docker and Kubernetes
+- GitHub Actions/Azure DevOps
+- ELK/EFK stack for logging
+- Prometheus/Grafana monitoring
+
+##### Security & API
+- OAuth2/OpenID Connect
+- JWT authentication
+- AES encryption
+- TLS/mTLS
+- OpenAPI/Swagger
+- Protobuf for gRPC
+
+### 3.2. Design Patterns & Best Practices
+
+#### 3.2.1. Microservices Independence
+Each microservice in the Medical Portal is designed to be independently deployable and maintainable:
+- Separate databases and schemas
+- Independent technology stacks (Java/Spring Boot and .NET)
+- Clear service boundaries and responsibilities
+- Event-driven communication for loose coupling
+
+#### 3.2.2. Saga Pattern for Transactions
+Implementation of the Saga pattern for distributed transactions:
+- Choreography-based approach using events
+- Compensation transactions for rollback
+- State tracking for long-running processes
+- Error handling and recovery mechanisms
+
+#### 3.2.3. Outbox Pattern for Events
+The Outbox pattern ensures reliable event publishing:
+- Events stored in service database
+- Background process for event publishing
+- Idempotency for message handling
+- Dead letter queue for failed events
+
+#### 3.2.4. Event Choreography
+Event-driven communication between services:
+- Domain events for state changes
+- Event subscription for dependent services
+- Asynchronous processing
+- Event schema versioning
+
+#### 3.2.5. Idempotency and Retry Handling
+Robust error handling and retry mechanisms:
+- Unique request IDs for deduplication
+- Retry policies with exponential backoff
+- Circuit breakers for failing services
+- Dead letter queues for failed messages
+
+### 3.3. System Integration
+
+#### 3.3.1. Service Communication Protocols
+The Medical Portal uses multiple communication protocols to enable efficient service-to-service interaction:
+
+- **REST APIs**: Used for synchronous request-response communication between services and with the frontend.
+  - JSON payloads for data exchange
+  - HTTP status codes for error handling
+  - OpenAPI/Swagger for documentation
+
+- **gRPC**: Used for high-performance, low-latency internal service communication.
+  - Protocol Buffers for efficient serialization
+  - Bi-directional streaming capabilities
+  - Code generation for type safety
+
+- **Message Broker (RabbitMQ/Kafka)**: Used for asynchronous, event-driven communication.
+  - Publish-subscribe pattern for event distribution
+  - Message queues for work distribution
+  - Dead letter queues for error handling
+
+#### 3.3.2. External Integrations
+The system integrates with external services and systems:
+
+- **Identity Providers**: OAuth2/OpenID Connect for authentication
+- **Payment Gateways**: For billing and payment processing
+- **Cloud Storage**: For document storage and retrieval
+- **Notification Services**: For SMS and email delivery
+
+#### 3.3.3. API Gateway Functionality
+The API Gateway serves as the entry point for all client requests:
+
+- **Request Routing**: Routes requests to appropriate services
+- **Authentication**: Validates JWT tokens
+- **Rate Limiting**: Prevents abuse
+- **Request Transformation**: Modifies requests as needed
+- **Response Aggregation**: Combines responses from multiple services
+- **Circuit Breaking**: Prevents cascading failures
+- **Logging and Monitoring**: Tracks request metrics
+
+#### 3.3.4. Event Management
+Event-driven architecture for asynchronous communication:
+
+- **Event Types**:
+  - Domain Events (e.g., `UserCreated`, `AppointmentScheduled`)
+  - Integration Events (e.g., `NotificationSent`)
+  - Command Events (e.g., `ProcessPayment`)
+
+- **Event Flow**:
+  1. Service performs action and publishes event
+  2. Event is stored in outbox table
+  3. Background process publishes event to message broker
+  4. Consuming services process event and update their state
+
+### 3.4. Service-to-Service Communication
+
+#### 3.4.1. Synchronous Communication
+Direct service-to-service communication:
+
+- **REST APIs**:
+  - Used for request-response patterns
+  - HTTP status codes for error handling
+  - Retry mechanisms for transient failures
+
+- **gRPC**:
+  - Used for performance-critical operations
+  - Strong typing with Protocol Buffers
+  - Streaming capabilities for real-time data
+
+#### 3.4.2. Asynchronous Communication
+Event-based communication for loose coupling:
+
+- **Message Broker (RabbitMQ/Kafka)**:
+  - Publish-subscribe for event distribution
+  - Message queues for work distribution
+  - Topic-based routing for selective consumption
+
+- **Event Patterns**:
+  - Event Notification: Simple notification of state changes
+  - Event-Carried State Transfer: Events contain full state
+  - Event Sourcing: Events as the source of truth
+
+#### 3.4.3. Service Discovery and Load Balancing
+Mechanisms for service discovery and load balancing:
+
+- **Kubernetes Service Discovery**:
+  - DNS-based service discovery
+  - Service registry for endpoint management
+  - Health checks for availability monitoring
+
+- **Load Balancing**:
+  - Client-side load balancing with resilience patterns
+  - Server-side load balancing with Kubernetes services
+  - Algorithm: Round-robin for even distribution
+
+#### 3.4.4. Interoperability Standards
+Standards for ensuring interoperability between services:
+
+- **Data Formats**:
+  - JSON for REST APIs
+  - Protocol Buffers for gRPC
+  - Avro for event schemas
+
+- **API Contracts**:
+  - OpenAPI/Swagger for REST APIs
+  - Protocol Buffers for gRPC
+  - Consumer-driven contracts with Pact
+
+- **Versioning**:
+  - API versioning (e.g., `/api/v1/users`)
+  - Event schema versioning
+  - Backward compatibility requirements
+
+### 3.5. API Gateway Configuration
+
+#### 3.5.1. Routing Configuration
+Configuration for request routing in the API Gateway:
+
+- **Path-Based Routing**:
+  - `/api/users/**` → User Profile Service
+  - `/api/auth/**` → Authentication Service
+  - `/api/health-records/**` → Health Records Service
+  - `/api/notifications/**` → Notification Service
+
+- **Header-Based Routing**:
+  - Content-Type header for format selection
+  - Accept-Language header for localization
+
+#### 3.5.2. Authentication and Authorization
+Security configuration in the API Gateway:
+
+- **JWT Validation**:
+  - Token signature verification
+  - Expiration checking
+  - Role and scope validation
+
+- **Authorization Rules**:
+  - Role-based access control
+  - Scope-based permissions
+  - Resource ownership validation
+
+#### 3.5.3. Rate Limiting and Throttling
+Protection against abuse and overload:
+
+- **Rate Limiting**:
+  - Request limits per client (e.g., 100 requests per minute)
+  - Token bucket algorithm for rate control
+  - Custom limits for different endpoints
+
+- **Throttling**:
+  - Gradual request reduction under load
+  - Priority-based throttling for critical operations
+  - Retry-After headers for client guidance
+
+#### 3.5.4. Protocol Translation
+Support for multiple protocols and formats:
+
+- **REST to gRPC**: Translating REST requests to gRPC calls
+- **GraphQL to REST**: Resolving GraphQL queries to REST API calls
+- **Content Negotiation**: Supporting multiple response formats (JSON, XML)
 ## 4. Backend Services Development
 
 ### 4.1. Core Services
 
-#### 4.1.1. Authentication Service (Spring Boot)
+#### 4.1.1. Authentication Service
 
 ##### 4.1.1.1. User Authentication Implementation
 - **Description**: The Authentication Service handles user login, session management, and authentication workflows using OAuth2 and JWT.
@@ -1034,7 +1616,7 @@ The technology stack for the Medical Portal includes:
 #### 4.3.3. Database Event Propagation
 - **Description**: Propagates database changes as events to other services.
 - **Implementation**: Use the Outbox pattern to store events in the database, then publish to RabbitMQ/Kafka.
-- **Example**: A change in a user’s profile triggers a `ProfileUpdated` event.
+- **Example**: A change in a user's profile triggers a `ProfileUpdated` event.
 
 #### 4.3.4. Message Broker Integration
 - **Description**: Integrates services with RabbitMQ (primary) or Kafka for asynchronous communication.
@@ -1119,31 +1701,37 @@ The technology stack for the Medical Portal includes:
     }
     ```
 - **Documentation**: Include examples in Swagger UI and developer portals.
-
----
-
 ## 5. Frontend Development
 
 ### 5.1. Project Structure
 
 #### 5.1.1. Directory Layout
-The frontend project is organized to promote modularity and maintainability, with the following directory structure:
 ```plaintext
-src/
-├── assets/
-├── components/
-│   ├── common/
-│   ├── features/
-│   └── routing/
-├── config/
-├── hooks/
-├── lib/
-├── pages/
-├── services/
-├── store/
-├── types/
-└── utils/
+medical-portal/
+├── src/
+│   ├── assets/           # Static assets (images, icons)
+│   ├── components/       # Reusable UI components
+│   │   ├── common/       # Shared components (buttons, inputs)
+│   │   ├── features/     # Feature-specific components
+│   │   └── routing/      # Navigation components
+│   ├── config/          # Configuration files
+│   ├── hooks/           # Custom React hooks
+│   ├── lib/             # Third-party library wrappers
+│   ├── pages/           # Page components
+│   │   ├── patient/     # Patient-specific pages
+│   │   ├── doctor/      # Doctor-specific pages
+│   │   └── admin/       # Admin-specific pages
+│   ├── services/        # API service wrappers
+│   ├── store/           # State management
+│   ├── types/           # TypeScript type definitions
+│   └── utils/           # Utility functions
+└── tests/
+    ├── unit/            # Unit tests
+    └── integration/     # Integration tests
 ```
+
+The frontend application follows a modular and maintainable structure that supports scalability and component reuse. The structure is organized to separate concerns and promote clean code practices.
+
 - **assets/**: Contains static assets such as images, fonts, and stylesheets.
 - **components/**: Houses reusable React components, divided into subdirectories for common, feature-specific, and routing components.
 - **config/**: Stores configuration files, such as API client settings.
@@ -1466,7 +2054,7 @@ src/
   This configuration sets cache durations to optimize performance.
 
 #### 5.3.4. Error Handling in Queries
-- **Description**: Handles errors in API requests using React Query’s error management.
+- **Description**: Handles errors in API requests using React Query's error management.
 - **Implementation**:
   - Display user-friendly error messages.
   - Retry failed requests with exponential backoff.
@@ -1657,9 +2245,6 @@ src/
   - Uses `https://api.medical-portal.com` for secure connections.
   - Optimizes builds with minification and tree-shaking.
   - Disables debug logging and enables production-grade security headers.
-
----
-
 ## 6. Security Implementation
 
 ### 6.1. Authentication & Authorization
@@ -1667,7 +2252,7 @@ src/
 #### 6.1.1. OAuth2/OpenID Connect Setup
 - **Description**: The Authentication Service implements OAuth2 with OpenID Connect (OIDC) to provide secure user authentication and single sign-on (SSO) capabilities.
 - **Implementation**:
-  - Uses Spring Security’s OAuth2 resource server for Java services and ASP.NET Core Authentication for .NET services.
+  - Uses Spring Security's OAuth2 resource server for Java services and ASP.NET Core Authentication for .NET services.
   - Integrates with an identity provider (e.g., Keycloak, Auth0) for user authentication.
 - **Configuration** (Spring Boot):
   ```java
@@ -1865,7 +2450,7 @@ src/
 #### 6.3.2. Rate Limiting Implementation
 - **Description**: Prevents abuse by limiting the number of API requests per client.
 - **Implementation**:
-  - Uses Spring Cloud Gateway’s rate limiter or Redis for distributed rate limiting.
+  - Uses Spring Cloud Gateway's rate limiter or Redis for distributed rate limiting.
   - Configures limits based on client IP or user ID.
 - **Example** (Spring Cloud Gateway):
   ```yaml
@@ -1948,15 +2533,12 @@ src/
         await next();
     });
     ```
-
----
 ## 7. Data Management
-
 
 ### 7.1. Data Models
 
 #### 7.1.1. Entity Relationships
-- **Description**: Defines the relationships between entities to model the Medical Portal’s data structure, focusing on users, health records, cases, and notifications.
+- **Description**: Defines the relationships between entities to model the Medical Portal's data structure, focusing on users, health records, cases, and notifications.
 - **Implementation**:
   - **Entities**:
     - **User**: Represents doctors and patients, linked to roles and profiles.
@@ -2175,7 +2757,7 @@ src/
 
 ### 7.3. Data Storage
 
-#### 7.3.1. Database Selection (SQL Server/MongoDB)
+#### 7.3.1. Database Selection
 - **Description**: Selects SQL Server for transactional data and MongoDB for flexible, non-relational data.
 - **Implementation**:
   - **SQL Server**:
@@ -2211,29 +2793,7 @@ src/
             uri: mongodb://localhost:27017/notifications_db
       ```
 
-#### 7.3.2. Caching Strategy
-- **Description**: Implements caching to improve performance for frequently accessed data.
-- **Implementation**:
-  - **Tool**: Redis for distributed caching.
-  - **Use Cases**:
-    - Cache user profiles to reduce database queries.
-    - Cache frequently accessed health record metadata.
-  - **Example** (Spring Boot - Redis Cache):
-    ```java
-    @Cacheable(value = "users", key = "#userId")
-    public User getUserById(String userId) {
-        return userRepository.findById(userId).orElse(null);
-    }
-    ```
-  - **Configuration**:
-    ```yaml
-    spring:
-      redis:
-        host: localhost
-        port: 6379
-    ```
-
-#### 7.3.3. Backup Procedures
+#### 7.3.2. Backup and Recovery Strategy
 - **Description**: Defines procedures for backing up data to ensure recoverability.
 - **Implementation**:
   - **SQL Server**:
@@ -2252,6 +2812,24 @@ src/
       ```
   - **Automation**: Schedule backups using cron jobs or CI/CD pipelines.
 
+#### 7.3.3. Monitoring and Maintenance
+- **Description**: Monitors database health and performance to ensure optimal operation.
+- **Implementation**:
+  - **Monitoring Tools**:
+    - Use Prometheus and Grafana for real-time monitoring.
+    - Configure alerts for critical metrics (e.g., high CPU usage, low disk space).
+  - **Maintenance Tasks**:
+    - Schedule regular index rebuilds and statistics updates.
+    - Implement data archiving for old records.
+    - Monitor query performance and optimize slow queries.
+  - **Example** (SQL Server Maintenance Script):
+    ```sql
+    -- Rebuild indexes
+    ALTER INDEX ALL ON Users REBUILD;
+    -- Update statistics
+    UPDATE STATISTICS Users;
+    ```
+
 #### 7.3.4. Data Retention Policies
 - **Description**: Defines policies for retaining and archiving data to comply with HIPAA and manage storage costs.
 - **Implementation**:
@@ -2265,9 +2843,6 @@ src/
   - **Deletion**:
     - Securely delete data using shredding tools after retention period.
     - Ensure compliance with user consent and data deletion requests.
-
----
-
 ## 8. Testing Strategy
 
 ### 8.1. Testing Framework
@@ -2660,9 +3235,6 @@ src/
   - **Tools**:
     - Integrate reports with CI/CD tools (e.g., GitHub Actions, Azure DevOps).
     - Use Grafana dashboards to visualize test metrics and trends.
-
----
-
 ## 9. DevOps & Deployment
 
 ### 9.1. Infrastructure Setup
@@ -2999,14 +3571,12 @@ src/
     - Alerts are triggered based on Prometheus metrics.
     - Notifications are sent to on-call engineers via PagerDuty or Slack.
     - Escalation policies ensure rapid response to critical issues.
-
----
 ## 10. Maintenance & Support
 
 ### 10.1. System Health
 
 #### 10.1.1. Health Monitoring Tools
-- **Description**: Implements tools to monitor the health of the Medical Portal’s components, including microservices, databases, and infrastructure.
+- **Description**: Implements tools to monitor the health of the Medical Portal's components, including microservices, databases, and infrastructure.
 - **Implementation**:
   - **Prometheus**: Collects metrics from Kubernetes pods, services, and applications (e.g., API response times, error rates).
   - **Grafana**: Visualizes health metrics in dashboards, providing insights into system performance.
@@ -3268,9 +3838,9 @@ src/
 - **Implementation**:
   - **Platform**: Use Confluence, Notion, or a custom knowledge base integrated with the Medical Portal.
   - **Content**:
-    - Troubleshooting guides (e.g., “How to reset a password”).
-    - FAQs for users (e.g., “How to schedule an appointment”).
-    - Technical runbooks for engineers (e.g., “Restarting a failed service”).
+    - Troubleshooting guides (e.g., "How to reset a password").
+    - FAQs for users (e.g., "How to schedule an appointment").
+    - Technical runbooks for engineers (e.g., "Restarting a failed service").
   - **Process**:
     - Update knowledge base with each resolved issue.
     - Categorize entries by user type (e.g., patient, doctor, admin).
@@ -3285,8 +3855,6 @@ src/
     3. Restart the service if necessary (`kubectl rollout restart deployment user-service`).
     **Contact**: Escalate to support@medical-portal.com if unresolved.
     ```
-
----
 ## 11. Development Guidelines
 
 ### 11.1. Development Standards
@@ -3647,8 +4215,6 @@ src/
     sonar.csharp.nunit.reportsPaths=TestResults/*.xml
     sonar.javascript.lcov.reportPaths=coverage/lcov.info
     ```
-
----
 ## 12. Troubleshooting & Support
 
 ### 12.1. Common Issues & Solutions
@@ -3698,8 +4264,7 @@ src/
     apiVersion: networking.k8s.io/v1
     kind: NetworkPolicy
     metadata:
-      name: allow-apiව
-
+      name: allow-api
       spec:
         podSelector:
           matchLabels:
@@ -3726,7 +4291,7 @@ src/
 - **Solutions**:
   - **Token Validation**:
     - Check token expiration and claims using a JWT debugger (e.g., jwt.io).
-    - Ensure the token’s issuer and audience match the configuration.
+    - Ensure the token's issuer and audience match the configuration.
   - **OAuth2 Configuration**: Verify client ID and secret in the Authentication Service.
     ```yaml
     # application.yml (Spring Boot)
@@ -3746,7 +4311,7 @@ src/
       public ResponseEntity<HealthRecord> getRecord(@PathVariable String id) { ... }
       ```
   - **Example Issue**: User receives 403 Forbidden on `/api/health-records`.
-    - **Solution**: Ensure the user’s JWT includes the `DOCTOR` role and re-authenticate if expired.
+    - **Solution**: Ensure the user's JWT includes the `DOCTOR` role and re-authenticate if expired.
 
 #### 12.1.4. Data Consistency Issues
 - **Description**: Resolves issues where data is inconsistent across services or databases (e.g., SQL Server, MongoDB).
@@ -3958,9 +4523,6 @@ src/
   - **Escalation**:
     - Critical issues: Contact SRE team via PagerDuty.
     - General inquiries: Use support portal or email.
-
----
-
 ## 13. Version History
 
 ### 13.1. Change Log
@@ -4154,13 +4716,9 @@ src/
     </appender>
     ```
 
----
-
 ## 14. Documentation Structure
 
 ### 14.1. File Organization
-
-The documentation is structured to cover all aspects of the Medical Portal, including fundamentals, architecture, services, security, data management, testing, deployment, maintenance, and development guidelines. Files are organized in a monorepo under the `docs/` directory, with subdirectories for each major category.
 
 #### 14.1.1. Project Fundamentals
 - **Description**: Provides an overview of the Medical Portal project, including objectives, scope, and stakeholder information.
@@ -4181,277 +4739,2536 @@ The documentation is structured to cover all aspects of the Medical Portal, incl
     - Operations Team: SREs for deployment and monitoring.
     - End Users: Doctors, Patients.
     ```
-  - `requirements.md`: Lists functional and non-functional requirements.
-  - `glossary.md`: Defines key terms (e.g., PHI, RBAC, JWT).
+  - `requirements.md`: Lis# Medical Portal Development Documentation
 
-#### 14.1.2. System Architecture
-- **Description**: Details the overall architecture, including microservices, communication protocols, and infrastructure.
-- **Location**: `docs/architecture/`
-- **Files**:
-  - `architecture-overview.md`: Describes the microservices architecture and high-level design.
-    ```markdown
-    # System Architecture
-    The Medical Portal uses a microservices architecture deployed on Kubernetes, with services communicating via REST, gRPC, and RabbitMQ/Kafka. Key components include:
-    - **API Gateway**: Routes requests and validates JWT tokens.
-    - **User Service**: Manages user profiles and authentication.
-    - **Health Records Service**: Stores encrypted patient records.
-    - **Notification Service**: Handles real-time notifications via SignalR.
-    ```
-  - `diagrams/`: Contains architecture diagrams (e.g., `system-architecture.drawio`).
-  - `communication-flow.md`: Outlines synchronous (REST/gRPC) and asynchronous (event-driven) communication.
+This document provides comprehensive documentation for the development process of the Medical Portal, covering all aspects from project initiation to maintenance. It serves as a structured blueprint to guide the development team through the entire project lifecycle.
 
-#### 14.1.3. Backend Services
-- **Description**: Documents individual backend services, their responsibilities, and APIs.
-- **Location**: `docs/services/`
-- **Files**:
-  - `user-service.md`: Details User Service endpoints, models, and logic.
-    ```markdown
-    # User Service
-    Manages user profiles and authentication.
+## Table of Contents
 
-    ## Endpoints
-    - **GET /api/v1/users/{id}**: Retrieves user by ID.
-    - **POST /api/v1/users**: Creates a new user.
+1. [Project Overview](#project-overview)
+   - 1.1. [Project Vision and Objectives](#project-vision-and-objectives)
+      - 1.1.1. [Vision Statement](#vision-statement)
+      - 1.1.2. [Core Objectives](#core-objectives)
+      - 1.1.3. [Key Deliverables](#key-deliverables)
+   - 1.2. [System Requirements](#system-requirements)
+      - 1.2.1. [Functional Requirements](#functional-requirements)
+      - 1.2.2. [Non-Functional Requirements](#non-functional-requirements)
+      - 1.2.3. [Compliance Requirements (HIPAA)](#compliance-requirements-hipaa)
+   - 1.3. [Stakeholders and Roles](#stakeholders-and-roles)
+      - 1.3.1. [Product Owner Responsibilities](#product-owner-responsibilities)
+      - 1.3.2. [Development Team Roles](#development-team-roles)
+      - 1.3.3. [DevOps and Infrastructure Roles](#devops-and-infrastructure-roles)
+      - 1.3.4. [Security and Compliance Team](#security-and-compliance-team)
+      - 1.3.5. [Quality Assurance Team](#quality-assurance-team)
+   - 1.4. [Success Metrics](#success-metrics)
+      - 1.4.1. [System Performance Metrics](#system-performance-metrics)
+      - 1.4.2. [User Satisfaction Metrics](#user-satisfaction-metrics)
+      - 1.4.3. [Compliance and Security Metrics](#compliance-and-security-metrics)
+      - 1.4.4. [Development and Deployment Metrics](#development-and-deployment-metrics)
 
-    ## Data Model
-    ```json
-    {
-      "id": "string",
-      "email": "string",
-      "role": "DOCTOR | PATIENT",
-      "firstName": "string",
-      "lastName": "string"
-    }
-    ```
-    ```
-  - `health-records-service.md`: Documents health record management.
-  - `case-service.md`: Covers case and appointment management.
-  - `notification-service.md`: Describes notification delivery (REST and SignalR).
+2. [Project Setup](#project-setup)
+   - 2.1. [Prerequisites](#prerequisites)
+      - 2.1.1. [Software Requirements](#software-requirements)
+      - 2.1.2. [Hardware Requirements](#hardware-requirements)
+      - 2.1.3. [Development Environment Tools](#development-environment-tools)
+   - 2.2. [Backend Services Setup](#backend-services-setup)
+      - 2.2.1. [Setting up Spring Boot Services](#setting-up-spring-boot-services)
+         - 2.2.1.1. [Project Creation with Spring Initializer](#project-creation-with-spring-initializer)
+         - 2.2.1.2. [Dependency Configuration](#dependency-configuration)
+         - 2.2.1.3. [Application Properties Setup](#application-properties-setup)
+         - 2.2.1.4. [Initial Project Structure](#initial-spring-boot-project-structure)
+      - 2.2.2. [Setting up .NET Services](#setting-up-net-services)
+         - 2.2.2.1. [Project Creation with .NET CLI](#project-creation-with-net-cli)
+         - 2.2.2.2. [NuGet Package Installation](#nuget-package-installation)
+         - 2.2.2.3. [Configuration of appsettings.json](#configuration-of-appsettings)
+         - 2.2.2.4. [Initial Project Structure](#initial-net-project-structure)
+   - 2.3. [Frontend Setup](#frontend-setup)
+      - 2.3.1. [Creating Vite + React Project](#creating-vite-react-project)
+      - 2.3.2. [Dependency Installation](#dependency-installation)
+      - 2.3.3. [Project Structure Configuration](#project-structure-configuration)
+      - 2.3.4. [Environment Variables Setup](#environment-variables-setup)
+      - 2.3.5. [Vite Configuration](#vite-configuration)
+   - 2.4. [Database Setup](#database-setup)
+      - 2.4.1. [SQL Server Setup (Docker)](#sql-server-setup-docker)
+      - 2.4.2. [MongoDB Setup (Docker)](#mongodb-setup-docker)
+      - 2.4.3. [Database Connection Configuration](#database-connection-configuration)
+   - 2.5. [Message Broker Setup](#message-broker-setup)
+      - 2.5.1. [RabbitMQ Setup (Docker)](#rabbitmq-setup-docker)
+      - 2.5.2. [Accessing RabbitMQ Management UI](#accessing-rabbitmq-management-ui)
+      - 2.5.3. [Configuration for Services](#configuration-for-services)
+   - 2.6. [Development Tools](#development-tools)
+      - 2.6.1. [IDE Setup](#ide-setup)
+      - 2.6.2. [Recommended VS Code Extensions](#recommended-vs-code-extensions)
+      - 2.6.3. [Git Configuration and .gitignore Setup](#git-configuration-and-gitignore-setup)
+   - 2.7. [Local Development](#local-development)
+      - 2.7.1. [Starting Infrastructure with Docker Compose](#starting-infrastructure-with-docker-compose)
+      - 2.7.2. [Starting Backend Services](#starting-backend-services)
+      - 2.7.3. [Starting Frontend Application](#starting-frontend-application)
+      - 2.7.4. [Accessing Service URLs](#accessing-service-urls)
+      - 2.7.5. [Debugging and Logging Setup](#debugging-and-logging-setup)
 
-#### 14.1.4. Frontend Implementation
-- **Description**: Documents the React frontend, including components, state management, and APIs.
-- **Location**: `docs/frontend/`
-- **Files**:
-  - `frontend-overview.md`: Describes the React architecture and Vite setup.
-    ```markdown
-    # Frontend Implementation
-    The Medical Portal frontend is built with React, using Vite for bundling and React Query for data fetching.
+3. [System Architecture](#system-architecture)
+   - 3.1. [High-Level Architecture](#high-level-architecture)
+      - 3.1.1. [Architecture Diagram](#architecture-diagram)
+      - 3.1.2. [Component Overview](#component-overview)
+      - 3.1.3. [Technology Stack Summary](#technology-stack-summary)
+   - 3.2. [Design Patterns & Best Practices](#design-patterns-and-best-practices)
+      - 3.2.1. [Microservices Independence](#microservices-independence)
+      - 3.2.2. [Saga Pattern for Transactions](#saga-pattern-for-transactions)
+      - 3.2.3. [Outbox Pattern for Events](#outbox-pattern-for-events)
+      - 3.2.4. [Event Choreography](#event-choreography)
+      - 3.2.5. [Idempotency and Retry Handling](#idempotency-and-retry-handling)
+   - 3.3. [System Integration](#system-integration)
+      - 3.3.1. [Service Communication Protocols](#service-communication-protocols)
+      - 3.3.2. [External Integrations](#external-integrations)
+      - 3.3.3. [API Gateway Functionality](#api-gateway-functionality)
+      - 3.3.4. [Event Management](#event-management)
+   - 3.4. [Service-to-Service Communication](#service-to-service-communication)
+      - 3.4.1. [Synchronous Communication](#synchronous-communication)
+      - 3.4.2. [Asynchronous Communication](#asynchronous-communication)
+      - 3.4.3. [Service Discovery and Load Balancing](#service-discovery-and-load-balancing)
+      - 3.4.4. [Interoperability Standards](#interoperability-standards)
+   - 3.5. [API Gateway Configuration](#api-gateway-configuration)
+      - 3.5.1. [Routing Configuration](#routing-configuration)
+      - 3.5.2. [Authentication and Authorization](#authentication-and-authorization)
+      - 3.5.3. [Rate Limiting and Throttling](#rate-limiting-and-throttling)
+      - 3.5.4. [Protocol Translation](#protocol-translation)
 
-    ## Folder Structure
-    - `src/components/`: Reusable UI components.
-    - `src/features/`: Feature-specific components (e.g., notifications, user profile).
-    - `src/lib/`: API and utility functions.
+4. [Backend Services Development](#backend-services-development)
+   - 4.1. [Core Services](#core-services)
+      - 4.1.1. [Authentication Service](#authentication-service)
+         - 4.1.1.1. [User Authentication Implementation](#user-authentication-implementation)
+         - 4.1.1.2. [JWT Token Management](#jwt-token-management)
+         - 4.1.1.3. [Role-Based Access Control](#role-based-access-control)
+      - 4.1.2. [User Profile Service (Spring Boot)](#user-profile-service)
+         - 4.1.2.1. [Profile Management](#profile-management)
+         - 4.1.2.2. [Data Models](#data-models)
+         - 4.1.2.3. [Business Logic Implementation](#business-logic-implementation)
+      - 4.1.3. [Health Records Service (.NET)](#health-records-service)
+         - 4.1.3.1. [Medical Records Management](#medical-records-management)
+         - 4.1.3.2. [Document Handling](#document-handling)
+         - 4.1.3.3. [Privacy Controls](#privacy-controls)
+      - 4.1.4. [Notification Service (.NET)](#notification-service)
+         - 4.1.4.1. [Real-Time Notifications](#real-time-notifications)
+         - 4.1.4.2. [SignalR Implementation](#signalr-implementation)
+         - 4.1.4.3. [Event Processing](#event-processing)
+      - 4.1.5. [Additional Domain Services](#additional-domain-services)
+         - 4.1.5.1. [Case Management Service](#case-management-service)
+         - 4.1.5.2. [Billing Service](#billing-service)
+         - 4.1.5.3. [Report Service](#report-service)
+         - 4.1.5.4. [Document Service](#document-service)
+   - 4.2. [Service Implementation](#service-implementation)
+      - 4.2.1. [Development Guidelines](#development-guidelines)
+      - 4.2.2. [Error Handling Strategies](#error-handling-strategies)
+      - 4.2.3. [Logging Implementation](#logging-implementation)
+      - 4.2.4. [Performance Optimization](#performance-optimization)
+   - 4.3. [Data Consistency Strategies](#data-consistency-strategies)
+      - 4.3.1. [Distributed Transaction Handling](#distributed-transaction-handling)
+         - 4.3.1.1. [Saga Pattern Implementation](#saga-pattern-implementation)
+         - 4.3.1.2. [Outbox Pattern Implementation](#outbox-pattern-implementation)
+         - 4.3.1.3. [Event Choreography](#event-choreography)
+      - 4.3.2. [Idempotency and Retry Handling](#idempotency-and-retry-handling)
+      - 4.3.3. [Database Event Propagation](#database-event-propagation)
+      - 4.3.4. [Message Broker Integration](#message-broker-integration)
+      - 4.3.5. [Schema Evolution and Versioning](#schema-evolution-and-versioning)
+   - 4.4. [API Documentation & Contracts](#api-documentation--contracts)
+      - 4.4.1. [OpenAPI/Swagger Integration](#openapi-swagger-integration)
+      - 4.4.2. [gRPC Protobuf Schemas](#grpc-protobuf-schemas)
+      - 4.4.3. [Contract Testing with Pact](#contract-testing-with-pact)
+      - 4.4.4. [API Versioning and Deprecation](#api-versioning-and-deprecation)
+      - 4.4.5. [Request/Response Examples](#request-response-examples)
 
-    ## Key Libraries
-    - React Query: For server-state management.
-    - PropTypes: For component prop validation.
-    ```
-  - `components.md`: Lists reusable components (e.g., Button, NotificationItem).
-  - `api-integration.md`: Details API calls to backend services.
-    ```markdown
-    ## API Integration
-    Uses `axios` for HTTP requests to the backend API Gateway.
+5. [Frontend Development](#frontend-development)
+   - 5.1. [Project Structure](#project-structure)
+      - 5.1.1. [Directory Layout](#directory-layout)
+      - 5.1.2. [Feature-Based Organization](#feature-based-organization)
+      - 5.1.3. [Component Hierarchy with PropTypes](#component-hierarchy-with-proptypes)
+   - 5.2. [Real-Time Integration with SignalR](#real-time-integration-with-signalr)
+      - 5.2.1. [SignalR Client Setup](#signalr-client-setup)
+      - 5.2.2. [Custom Hook for SignalR](#custom-hook-for-signalr)
+      - 5.2.3. [Notification Handling](#notification-handling)
+      - 5.2.4. [Chat Feature Implementation](#chat-feature-implementation)
+      - 5.2.5. [Appointment Updates](#appointment-updates)
+   - 5.3. [Data Fetching with React Query](#data-fetching-with-react-query)
+      - 5.3.1. [API Client Configuration](#api-client-configuration)
+      - 5.3.2. [Custom Hooks for Data Fetching](#custom-hooks-for-data-fetching)
+      - 5.3.3. [Cache Management](#cache-management)
+      - 5.3.4. [Error Handling in Queries](#error-handling-in-queries)
+   - 5.4. [Component Architecture](#component-architecture)
+      - 5.4.1. [Common Components](#common-components)
+      - 5.4.2. [Feature-Specific Components](#feature-specific-components)
+      - 5.4.3. [Routing Components](#routing-components)
+      - 5.4.4. [State Management Components](#state-management-components)
+   - 5.5. [Environment Configuration](#environment-configuration)
+      - 5.5.1. [Environment Variables](#environment-variables)
+      - 5.5.2. [Vite Proxy Configuration](#vite-proxy-configuration)
+      - 5.5.3. [Production vs Development Setup](#production-vs-development-setup)
 
-    ```javascript
-    // src/lib/api.js
-    import axios from 'axios';
+6. [Security Implementation](#security-implementation)
+   - 6.1. [Authentication & Authorization](#authentication--authorization)
+      - 6.1.1. [OAuth2/OpenID Connect Setup](#oauth2openid-connect-setup)
+      - 6.1.2. [JWT Token Management](#jwt-token-management)
+      - 6.1.3. [Role-Based Access Control](#role-based-access-control)
+      - 6.1.4. [Token Refresh and Revocation](#token-refresh-and-revocation)
+   - 6.2. [Data Security](#data-security)
+      - 6.2.1. [Encryption Methods](#encryption-methods)
+      - 6.2.2. [Data Privacy Measures](#data-privacy-measures)
+      - 6.2.3. [HIPAA Compliance Requirements](#hipaa-compliance-requirements)
+      - 6.2.4. [Security Auditing](#security-auditing)
+   - 6.3. [API Security](#api-security)
+      - 6.3.1. [API Authentication](#api-authentication)
+      - 6.3.2. [Rate Limiting Implementation](#rate-limiting-implementation)
+      - 6.3.3. [Input Validation](#input-validation)
+      - 6.3.4. [Security Headers](#security-headers)
 
-    const api = axios.create({
-      baseURL: 'https://api.medical-portal.com/api/v1',
-      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
-    });
+7. [Data Management](#data-management)
+   - 7.1. [Data Models](#data-models)
+      - 7.1.1. [Entity Relationships](#entity-relationships)
+      - 7.1.2. [Schema Design](#schema-design)
+      - 7.1.3. [Data Validation Rules](#data-validation-rules)
+      - 7.1.4. [Database Migration Strategy](#database-migration-strategy)
+   - 7.2. [Data Flow](#data-flow)
+      - 7.2.1. [Service Communication Flow](#service-communication-flow)
+      - 7.2.2. [Event Processing Workflow](#event-processing-workflow)
+      - 7.2.3. [Data Synchronization](#data-synchronization)
+      - 7.2.4. [Error Handling in Data Flow](#error-handling-in-data-flow)
+   - 7.3. [Data Storage](#data-storage)
+      - 7.3.1. [Database Selection](#database-selection)
+      - 7.3.2. [Backup and Recovery Strategy](#backup-and-recovery-strategy)
+      - 7.3.3. [Monitoring and Maintenance](#monitoring-and-maintenance)
+      - 7.3.4. [Data Retention Policies](#data-retention-policies)
 
-    export const getUser = (id) => api.get(`/users/${id}`);
-    ```
-    ```
+8. [Testing Strategy](#testing-strategy)
+   - 8.1. [Testing Framework](#testing-framework)
+      - 8.1.1. [Testing Architecture](#testing-architecture)
+      - 8.1.2. [Testing Tools Selection](#testing-tools-selection)
+      - 8.1.3. [Test Environment Setup](#test-environment-setup)
+      - 8.1.4. [Testing Standards](#testing-standards)
+   - 8.2. [Test Implementation](#test-implementation)
+      - 8.2.1. [Unit Testing](#unit-testing)
+      - 8.2.2. [Integration Testing](#integration-testing)
+      - 8.2.3. [End-to-End Testing](#end-to-end-testing)
+      - 8.2.4. [Performance Testing](#performance-testing)
+   - 8.3. [Quality Assurance](#quality-assurance)
+      - 8.3.1. [Code Quality Standards](#code-quality-standards)
+      - 8.3.2. [Test Coverage Goals](#test-coverage-goals)
+      - 8.3.3. [Automated Testing Pipeline](#automated-testing-pipeline)
+      - 8.3.4. [Testing Reports and Metrics](#testing-reports-and-metrics)
 
-#### 14.1.5. Security Protocols
-- **Description**: Documents security measures, including authentication, authorization, and data protection.
-- **Location**: `docs/security/`
-- **Files**:
-  - `authentication.md`: Covers OAuth2/OpenID Connect and JWT management.
-  - `authorization.md`: Details role-based access control (RBAC).
-  - `data-security.md`: Describes encryption (AES-256, TLS 1.3) and HIPAA compliance.
-  - `api-security.md`: Outlines API security measures (e.g., rate limiting, headers).
-    ```markdown
-    # API Security
-    ## Security Headers
-    - Content-Security-Policy: Restricts content sources.
-    - X-Frame-Options: DENY to prevent clickjacking.
+9. [DevOps & Deployment](#devops--deployment)
+   - 9.1. [Infrastructure Setup](#infrastructure-setup)
+      - 9.1.1. [Cloud Architecture Configuration](#cloud-architecture-configuration)
+      - 9.1.2. [Network Setup](#network-setup)
+      - 9.1.3. [Resource Management](#resource-management)
+      - 9.1.4. [Environment Configuration](#environment-configuration)
+   - 9.2. [Deployment Pipeline](#deployment-pipeline)
+      - 9.2.1. [CI/CD Pipeline Setup](#cicd-pipeline-setup)
+      - 9.2.2. [Build Process](#build-process)
+      - 9.2.3. [Deployment Strategy](#deployment-strategy)
+      - 9.2.4. [Release Management](#release-management)
+   - 9.3. [Monitoring & Operations](#monitoring--operations)
+      - 9.3.1. [System Monitoring Tools](#system-monitoring-tools)
+      - 9.3.2. [Performance Metrics Collection](#performance-metrics-collection)
+      - 9.3.3. [Logging System Configuration](#logging-system-configuration)
+      - 9.3.4. [Alert Management](#alert-management)
 
-    ## Example (Spring Boot)
-    ```java
-    http.headers()
-        .contentSecurityPolicy("default-src 'self'")
-        .and()
-        .frameOptions().deny();
-    ```
-    ```
+10. [Maintenance & Support](#maintenance--support)
+    - 10.1. [System Health](#system-health)
+       - 10.1.1. [Health Monitoring Tools](#health-monitoring-tools)
+       - 10.1.2. [Preventive Maintenance](#preventive-maintenance)
+       - 10.1.3. [System Updates](#system-updates)
+       - 10.1.4. [Performance Checks](#performance-checks)
+    - 10.2. [System Optimization](#system-optimization)
+       - 10.2.1. [Performance Tuning](#performance-tuning)
+       - 10.2.2. [Resource Optimization](#resource-optimization)
+       - 10.2.3. [Scaling Strategy](#scaling-strategy)
+       - 10.2.4. [Cost Optimization](#cost-optimization)
+    - 10.3. [Support Operations](#support-operations)
+       - 10.3.1. [Issue Resolution Process](#issue-resolution-process)
+       - 10.3.2. [Support Workflow](#support-workflow)
+       - 10.3.3. [Documentation Updates](#documentation-updates)
+       - 10.3.4. [Knowledge Base Management](#knowledge-base-management)
 
-#### 14.1.6. Data Management
-- **Description**: Documents data models, flows, and storage strategies.
-- **Location**: `docs/data-management/`
-- **Files**:
-  - `data-models.md`: Describes entity relationships and schemas.
-  - `data-flow.md`: Outlines service communication and event processing.
-  - `data-storage.md`: Details SQL Server and MongoDB usage, caching, and backups.
-    ```markdown
-    # Data Storage
-    ## SQL Server Configuration
-    ```yaml
-    spring:
-      datasource:
-        url: jdbc:sqlserver://localhost:1433;databaseName=medical_db
-    ```
-    ## MongoDB Configuration
-    ```yaml
-    spring:
-      data:
-        mongodb:
-          uri: mongodb://localhost:27017/notifications_db
-    ```
-    ```
+11. [Development Guidelines](#development-guidelines)
+    - 11.1. [Development Standards](#development-standards)
+       - 11.1.1. [Coding Standards](#coding-standards)
+       - 11.1.2. [Architecture Guidelines](#architecture-guidelines)
+       - 11.1.3. [Documentation Requirements](#documentation-requirements)
+       - 11.1.4. [Code Review Process](#code-review-process)
+    - 11.2. [Version Control](#version-control)
+       - 11.2.1. [Git Workflow](#git-workflow)
+       - 11.2.2. [Branch Strategy](#branch-strategy)
+       - 11.2.3. [Release Process](#release-process)
+       - 11.2.4. [Version Management](#version-management)
+    - 11.3. [Contribution Guidelines](#contribution-guidelines)
+       - 11.3.1. [Development Process](#development-process)
+       - 11.3.2. [Submission Guidelines](#submission-guidelines)
+       - 11.3.3. [Code Review Requirements](#code-review-requirements)
+       - 11.3.4. [Quality Standards](#quality-standards)
 
-#### 14.1.7. Testing Strategies
-- **Description**: Documents testing frameworks, implementation, and quality assurance.
-- **Location**: `docs/testing/`
-- **Files**:
-  - `testing-framework.md`: Describes unit, integration, and end-to-end testing.
-  - `test-implementation.md`: Details test cases and tools (JUnit, xUnit, Vitest).
-  - `quality-assurance.md`: Covers code quality and coverage goals.
-    ```markdown
-    # Test Implementation
-    ## Unit Testing (Frontend)
-    ```javascript
-    import { render, screen } from '@testing-library/react';
-    import Button from '../components/common/Button';
+12. [Troubleshooting & Support](#troubleshooting--support)
+    - 12.1. [Common Issues & Solutions](#common-issues--solutions)
+       - 12.1.1. [Pod Startup Failures](#pod-startup-failures)
+       - 12.1.2. [Network Connectivity Issues](#network-connectivity-issues)
+       - 12.1.3. [Authentication/Authorization Errors](#authenticationauthorization-errors)
+       - 12.1.4. [Data Consistency Issues](#data-consistency-issues)
+    - 12.2. [Debug Tools](#debug-tools)
+       - 12.2.1. [Kubernetes Dashboard](#kubernetes-dashboard)
+       - 12.2.2. [Logging Solutions](#logging-solutions)
+       - 12.2.3. [Monitoring Alerts](#monitoring-alerts)
+       - 12.2.4. [Tracing Tools](#tracing-tools)
+    - 12.3. [Support Contacts](#support-contacts)
+       - 12.3.1. [Technical Support](#technical-support)
+       - 12.3.2. [Developer Resources](#developer-resources)
+       - 12.3.3. [Team Contact Information](#team-contact-information)
 
-    describe('Button', () => {
-      it('renders label', () => {
-        render(<Button label="Click Me" onClick={() => {}} />);
-        expect(screen.getByText('Click Me')).toBeInTheDocument();
-      });
-    });
-    ```
-    ```
+13. [Version History](#version-history)
+    - 13.1. [Change Log](#change-log)
+       - 13.1.1. [Version Updates](#version-updates)
+       - 13.1.2. [Major Changes](#major-changes)
+       - 13.1.3. [Bug Fixes](#bug-fixes)
+    - 13.2. [Migration Guides](#migration-guides)
+       - 13.2.1. [Schema Migration Procedures](#schema-migration-procedures)
+       - 13.2.2. [Backward Compatibility Strategies](#backward-compatibility-strategies)
+       - 13.2.3. [Data Migration Plans](#data-migration-plans)
 
-#### 14.1.8. DevOps and Deployment
-- **Description**: Documents infrastructure setup, CI/CD pipelines, and monitoring.
-- **Location**: `docs/devops/`
-- **Files**:
-  - `infrastructure.md`: Details Kubernetes and cloud setup.
-  - `ci-cd.md`: Describes GitHub Actions/Azure DevOps pipelines.
-  - `monitoring.md`: Covers Prometheus, Grafana, and logging.
-    ```markdown
-    # CI/CD Pipeline
-    ```yaml
-    name: CI/CD Pipeline
-    on: [push]
-    jobs:
-      build:
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v3
-          - name: Build Docker Image
-            run: docker build -t medical/user-service:latest .
-    ```
-    ```
-
-#### 14.1.9. Maintenance and Support
-- **Description**: Documents system health monitoring, optimization, and support processes.
-- **Location**: `docs/maintenance/`
-- **Files**:
-  - `health-monitoring.md`: Covers Prometheus and Grafana usage.
-  - `optimization.md`: Details performance tuning and scaling.
-  - `support.md`: Outlines issue resolution and support contacts.
-    ```markdown
-    # Health Monitoring
-    ## Prometheus Configuration
-    ```yaml
-    scrape_configs:
-      - job_name: 'user-service'
-        metrics_path: '/actuator/prometheus'
-        static_configs:
-          - targets: ['user-service:8080']
-    ```
-    ```
-
-#### 14.1.10. Development Guidelines
-- **Description**: Documents coding standards, version control, and contribution guidelines.
-- **Location**: `docs/development/`
-- **Files**:
-  - `coding-standards.md`: Defines Java, C#, and JavaScript conventions.
-  - `version-control.md`: Outlines Git workflow and branching.
-  - `contribution.md`: Details pull request and review processes.
-    ```markdown
-    # Coding Standards
-    ## JavaScript (Frontend)
-    - Use Airbnb style guide.
-    - Enforce PropTypes for component validation.
-    ```javascript
-    import PropTypes from 'prop-types';
-    const Button = ({ label }) => <button>{label}</button>;
-    Button.propTypes = { label: PropTypes.string.isRequired };
-    ```
-    ```
-
-### 14.2. File Split Suggestions
-
-To improve maintainability and accessibility, the documentation is split into modular files based on functional areas. Each file is concise, focused, and linked to related documents for cross-referencing.
-
-#### 14.2.1. Architecture Files
-- **Description**: Suggests splitting architecture documentation into focused files for clarity.
-- **Suggestions**:
-  - `docs/architecture/overview.md`: High-level architecture description.
-  - `docs/architecture/microservices.md`: Details each microservice’s role and interactions.
-  - `docs/architecture/communication.md`: Covers REST, gRPC, and event-driven communication.
-  - `docs/architecture/diagrams/system.drawio`: Visual representation of the system.
-- **Rationale**:
-  - Separates high-level design from detailed service interactions.
-  - Facilitates updates when new services are added.
-
-#### 14.2.2. Service Implementation Files
-- **Description**: Recommends splitting service documentation by microservice for targeted reference.
-- **Suggestions**:
-  - `docs/services/user-service/overview.md`: General description and endpoints.
-  - `docs/services/user-service/models.md`: Data models and schemas.
-  - `docs/services/health-records-service/overview.md`: Similar structure for other services.
-  - `docs/services/notification-service/signalr.md`: Specifics on SignalR integration.
-- **Rationale**:
-  - Enables developers to focus on specific services without navigating large files.
-  - Aligns with microservices architecture.
-
-#### 14.2.3. Security Files
-- **Description**: Proposes splitting security documentation into granular files for specific topics.
-- **Suggestions**:
-  - `docs/security/authentication.md`: OAuth2/OpenID Connect and JWT details.
-  - `docs/security/authorization.md`: RBAC and role management.
-  - `docs/security/data-protection.md`: Encryption and HIPAA compliance.
-  - `docs/security/api-security.md`: Rate limiting, headers, and input validation.
-- **Rationale**:
-  - Separates concerns for security audits and compliance checks.
-  - Simplifies updates for specific security protocols.
-
-#### 14.2.4. Data Management Files
-- **Description**: Suggests splitting data management documentation into focused areas.
-- **Suggestions**:
-  - `docs/data-management/models.md`: Entity relationships and schemas.
-  - `docs/data-management/flow.md`: Service communication and event workflows.
-  - `docs/data-management/storage.md`: Database and caching configurations.
-  - `docs/data-management/backup.md`: Backup and retention policies.
-- **Rationale**:
-  - Organizes data-related documentation by function.
-  - Facilitates database administrators’ access to relevant information.
-
-#### 14.2.5. Deployment Files
-- **Description**: Recommends splitting deployment documentation for clarity and usability.
-- **Suggestions**:
-  - `docs/devops/infrastructure.md`: Kubernetes and cloud setup.
-  - `docs/devops/ci-cd.md`: CI/CD pipeline configurations.
-  - `docs/devops/monitoring.md`: Monitoring and logging setups.
-  - `docs/devops/deployment-strategies.md`: Blue-green, canary, and rolling updates.
-- **Rationale**:
-  - Separates infrastructure setup from deployment processes.
-  - Simplifies reference for DevOps and SRE teams.
+14. [Documentation Structure](#documentation-structure)
+    - 14.1. [File Organization](#file-organization)
+       - 14.1.1. [Project Fundamentals](#project-fundamentals)
+       - 14.1.2. [System Architecture](#system-architecture)
+       - 14.1.3. [Backend Services](#backend-services)
+       - 14.1.4. [Frontend Implementation](#frontend-implementation)
+       - 14.1.5. [Security Protocols](#security-protocols)
+       - 14.1.6. [Data Management](#data-management)
+       - 14.1.7. [Testing Strategies](#testing-strategies)
+       - 14.1.8. [DevOps and Deployment](#devops-and-deployment)
+       - 14.1.9. [Maintenance and Support](#maintenance-and-support)
+       - 14.1.10. [Development Guidelines](#development-guidelines)
+    - 14.2. [File Split Suggestions](#file-split-suggestions)
+       - 14.2.1. [Architecture Files](#architecture-files)
+       - 14.2.2. [Service Implementation Files](#service-implementation-files)
+       - 14.2.3. [Security Files](#security-files)
+       - 14.2.4. [Data Management Files](#data-management-files)
+       - 14.2.5. [Deployment Files](#deployment-files)
 
 ---
+
+## 1. Project Overview
+
+### 1.1. Project Vision and Objectives
+
+#### 1.1.1. Vision Statement
+The Medical Portal aims to deliver a scalable, secure, and efficient platform for managing healthcare-related interactions, including user authentication, profile management, health records, and real-time notifications. The vision is to create a robust system that enhances patient and doctor interactions while ensuring compliance with healthcare regulations, particularly HIPAA, and supporting seamless integration of polyglot microservices (Spring Boot and .NET) for flexibility and maintainability.
+
+#### 1.1.2. Core Objectives
+The core objectives of the Medical Portal include:
+- **Seamless User Experience**: Provide intuitive user authentication, role-based access control, and profile management for doctors and patients.
+- **Real-Time Communication**: Implement real-time notifications and communication features using SignalR/WebSocket for timely updates.
+- **Data Security and Compliance**: Ensure HIPAA-compliant data handling, encryption, and privacy controls for health records and sensitive information.
+- **Scalability and Maintainability**: Develop a microservices architecture that supports horizontal scaling, independent deployments, and polyglot persistence (SQL Server for transactional data, MongoDB for flexible storage).
+- **Interoperability**: Enable seamless communication between Java (Spring Boot) and .NET services using REST, gRPC, and message brokers like RabbitMQ or Kafka.
+- **Reliable Data Management**: Maintain data consistency across distributed services using patterns like Saga and Outbox for eventual consistency.
+
+#### 1.1.3. Key Deliverables
+The key deliverables for the project include:
+- A fully functional **Authentication Service** (Spring Boot) for user login, JWT token management, and role-based access control.
+- A **User Profile Service** (Spring Boot) for managing doctor and patient profiles, including CRUD operations and role assignments.
+- A **Health Records Service** (.NET) for secure management of medical records and documents with privacy controls.
+- A **Notification Service** (.NET) for real-time notifications using SignalR/WebSocket, integrated with MongoDB for notification history.
+- Additional domain services (e.g., Case Management, Billing, Report, Document Services) implemented in Java or .NET as needed.
+- A **Frontend Application** (React with Vite) integrated with REST/GraphQL APIs and real-time features via SignalR.
+- A **Cloud-Native Deployment** using Kubernetes and Docker, ensuring scalability and cloud-agnostic patterns.
+- Comprehensive **API Documentation** with OpenAPI/Swagger for REST and Protobuf schemas for gRPC.
+- A **CI/CD Pipeline** using GitHub Actions or Azure DevOps for automated builds, tests, and deployments.
+- **Monitoring and Observability** tools (e.g., Prometheus, Grafana, ELK/EFK stack) for system health and performance tracking.
+
+### 1.2. System Requirements
+
+#### 1.2.1. Functional Requirements
+The functional requirements include:
+- **User Authentication and Authorization**: Support for secure login, OAuth2/OpenID Connect, JWT token management, and role-based access control (e.g., DOCTOR, PATIENT roles).
+- **Profile Management**: CRUD operations for user profiles, including qualifications for doctors and personal details for patients.
+- **Health Records Management**: Secure storage, retrieval, and management of medical records with privacy controls, implemented in the Health Records Service.
+- **Real-Time Notifications**: Delivery of real-time updates (e.g., appointment updates, case status changes) via SignalR/WebSocket, with persistent storage in MongoDB.
+- **Case Management**: Functionality to create, update, and manage medical cases, assigned to doctors and owned by patients.
+- **Billing and Payments**: Processing of invoices and payments, integrated with user and case data.
+- **Reporting**: Generation of analytics reports and PDFs, with secure storage and sharing capabilities.
+- **Document Management**: Secure storage and retrieval of documents, ensuring compliance with privacy regulations.
+
+#### 1.2.2. Non-Functional Requirements
+The non-functional requirements include:
+- **Scalability**: The system must support horizontal scaling through Kubernetes-based deployments and queue-based asynchronous processing for event-driven workloads.
+- **Performance**: API response times should be under 200ms for 95% of requests, with low-latency real-time communication.
+- **Availability**: Target 99.9% system uptime, achieved through redundant deployments and failover mechanisms.
+- **Security**: Implement end-to-end encryption (AES for data at rest, TLS for data in transit), mutual TLS (mTLS) for service-to-service communication, and robust authentication/authorization.
+- **Interoperability**: Ensure compatibility between Java and .NET services using shared schemas (OpenAPI for REST, Protobuf for gRPC, Avro/JSON for events).
+- **Maintainability**: Services should be independently deployable, with clear documentation and automated CI/CD pipelines.
+- **Observability**: Centralized logging (ELK/EFK stack), distributed tracing (OpenTelemetry, Jaeger), and metrics collection (Prometheus, Grafana) for monitoring.
+
+#### 1.2.3. Compliance Requirements (HIPAA)
+The HIPAA compliance requirements include:
+- **Data Privacy**: Ensure patient data is protected through encryption, access controls, and audit logging.
+- **Audit Logging**: Implement comprehensive audit trails for all data access and modifications, stored in Elasticsearch with Index Lifecycle Management (ILM) for cost control.
+- **Secure Storage**: Use SQL Server for transactional data and MongoDB for flexible schemas, with encryption at rest.
+- **Access Control**: Enforce role-based access control (RBAC) to restrict data access to authorized users (e.g., doctors accessing patient records).
+- **Security Auditing**: Regular audits of security configurations, API access, and data handling processes to ensure compliance.
+
+### 1.3. Stakeholders and Roles
+
+#### 1.3.1. Product Owner Responsibilities
+- Define and prioritize project requirements, including functional and non-functional specifications.
+- Validate deliverables against project objectives and user needs.
+- Coordinate with stakeholders to align on project scope and timelines.
+- Approve changes to the project scope or architecture.
+
+#### 1.3.2. Development Team Roles
+- **Backend Developers (Java)**: Develop and maintain Spring Boot services (e.g., Authentication, User Profile, API Gateway).
+- **Backend Developers (.NET)**: Develop and maintain .NET services (e.g., Health Records, Notification).
+- **Frontend Developers**: Build and maintain the React-based frontend, integrating with REST/GraphQL APIs and SignalR.
+- **Full-Stack Developers**: Contribute to both backend and frontend development, ensuring seamless integration.
+
+#### 1.3.3. DevOps and Infrastructure Roles
+- **DevOps Engineers**: Configure and manage CI/CD pipelines (GitHub Actions/Azure DevOps), Kubernetes clusters, and cloud infrastructure (AWS, Azure, or GCP).
+- **Infrastructure Engineers**: Set up and maintain databases (SQL Server, MongoDB), message brokers (RabbitMQ/Kafka), and monitoring tools.
+- **System Administrators**: Monitor system health, manage scaling, and handle infrastructure updates.
+
+#### 1.3.4. Security and Compliance Team
+- **Security Engineers**: Implement and validate security measures, including OAuth2, JWT, mTLS, and encryption.
+- **Compliance Officers**: Ensure HIPAA compliance through audits, data protection policies, and access control enforcement.
+- **Penetration Testers**: Conduct regular security assessments to identify vulnerabilities.
+
+#### 1.3.5. Quality Assurance Team
+- **QA Engineers**: Develop and execute unit, integration, end-to-end, and performance tests.
+- **Test Automation Engineers**: Build automated testing pipelines using tools like JUnit, xUnit, Vitest, and Playwright.
+- **Performance Testers**: Validate system performance against non-functional requirements (e.g., response times, scalability).
+
+### 1.4. Success Metrics
+
+#### 1.4.1. System Performance Metrics
+- **API Response Time**: Achieve <200ms for 95% of API requests, measured via Prometheus and Grafana dashboards.
+- **System Uptime**: Maintain 99.9% availability, monitored through Kubernetes health checks and uptime alerts.
+- **Event Processing Latency**: Ensure event-driven workflows (e.g., notifications) are processed within 500ms, tracked via RabbitMQ queue metrics.
+- **Scalability**: Support up to 10,000 concurrent users, validated through load testing.
+
+#### 1.4.2. User Satisfaction Metrics
+- **User Feedback**: Achieve 90% positive feedback from doctors and patients, collected via in-app surveys.
+- **Usability**: Ensure 95% of users can complete core tasks (e.g., login, view records, receive notifications) without errors, measured through usability testing.
+- **Adoption Rate**: Target 80% adoption among registered users within the first six months of deployment.
+
+#### 1.4.3. Compliance and Security Metrics
+- **HIPAA Compliance**: 100% compliance with HIPAA requirements, verified through quarterly audits.
+- **Security Incidents**: Zero critical security incidents (e.g., data breaches), monitored via security audits and logging.
+- **Audit Log Coverage**: 100% of data access and modifications logged, with logs retained for at least one year.
+
+#### 1.4.4. Development and Deployment Metrics
+- **Test Coverage**: Achieve >80% code coverage for critical services, measured via testing tools (e.g., JaCoCo for Java, Coverlet for .NET).
+- **Deployment Frequency**: Enable weekly deployments for non-critical updates, with zero-downtime rolling updates.
+- **Build Success Rate**: Maintain a 95% success rate for CI/CD pipeline builds, tracked via GitHub Actions/Azure DevOps.
+- **Mean Time to Recovery (MTTR)**: Resolve production issues within 1 hour, monitored via incident response tools.
+
+## 2. Project Setup
+
+### 2.1. Prerequisites
+
+#### 2.1.1. Software Requirements
+Required software for development:
+- Java Development Kit (JDK) 17 or later
+- .NET SDK 8.0 or later
+- Node.js 18.x or later
+- Docker Desktop
+- Git
+- Visual Studio Code or preferred IDE
+- SQL Server Management Studio (SSMS)
+- MongoDB Compass
+
+#### 2.1.2. Hardware Requirements
+Minimum specifications for development:
+- 16GB RAM
+- 4 CPU cores
+- 256GB SSD storage
+- High-speed internet connection
+
+#### 2.1.3. Development Environment Tools
+Essential tools and configurations:
+- Network access to development servers and resources
+- Access rights to code repositories
+- VPN configuration for remote access
+- SSL certificates for local development
+- Environment variables configuration
+- Docker Desktop for containerization
+- Git with configured global settings
+- Visual Studio Code with extensions
+- Postman for API testing
+- MongoDB Compass for database management
+
+### 2.2. Backend Services Setup
+
+#### 2.2.1. Setting up Spring Boot Services
+
+##### 2.2.1.1. Project Creation with Spring Initializer
+Create Spring Boot services using Spring Initializer with required dependencies:
+```bash
+curl https://start.spring.io/starter.zip -d dependencies=web,data-jpa,security -d language=java -d bootVersion=3.1.0 -o spring-boot-service.zip
+```
+
+##### 2.2.1.2. Dependency Configuration
+Add necessary dependencies to the `pom.xml` file:
+```xml
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-api</artifactId>
+        <version>0.11.5</version>
+    </dependency>
+    <dependency>
+        <groupId>com.microsoft.sqlserver</groupId>
+        <artifactId>mssql-jdbc</artifactId>
+        <scope>runtime</scope>
+    </dependency>
+</dependencies>
+```
+
+##### 2.2.1.3. Application Properties Setup
+Configure `application.properties` or `application.yml` for Spring Boot services:
+```yaml
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=medical_db;encrypt=true;trustServerCertificate=true
+    username: sa
+    password: YourStrong@Passw0rd
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+  security:
+    jwt:
+      secret: your-secret-key-here
+      expiration: 86400000
+
+server:
+  port: 8080
+```
+
+##### 2.2.1.4. Initial Project Structure
+Standard Spring Boot project structure:
+```plaintext
+src/
+├── main/
+│   ├── java/
+│   │   └── com/medical/
+│   │       ├── config/
+│   │       ├── controller/
+│   │       ├── model/
+│   │       ├── repository/
+│   │       └── service/
+│   └── resources/
+│       └── application.properties
+└── test/
+    └── java/
+```
+
+#### 2.2.2. Setting up .NET Services
+
+##### 2.2.2.1. Project Creation with .NET CLI
+Create .NET services using the CLI:
+```powershell
+dotnet new webapi -n HealthRecordsService
+cd HealthRecordsService
+```
+
+##### 2.2.2.2. NuGet Package Installation
+Install required NuGet packages:
+```powershell
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+dotnet add package Microsoft.AspNetCore.SignalR
+dotnet add package Swashbuckle.AspNetCore
+dotnet add package MongoDB.Driver
+```
+
+##### 2.2.2.3. Configuration of appsettings.json
+Configure `appsettings.json` for .NET services:
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost,1433;Database=medical_db;User Id=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=True;"
+  },
+  "MongoDb": {
+    "ConnectionString": "mongodb://localhost:27017",
+    "DatabaseName": "medical_portal"
+  },
+  "Jwt": {
+    "Key": "your-secret-key-here",
+    "Issuer": "medical-portal",
+    "Audience": "medical-portal-api",
+    "ExpiryMinutes": 1440
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}
+```
+
+##### 2.2.2.4. Initial Project Structure
+Standard .NET project structure:
+```plaintext
+HealthRecordsService/
+├── Controllers/
+├── Models/
+├── Services/
+├── Repositories/
+├── Hubs/
+├── appsettings.json
+└── Program.cs
+```
+
+### 2.3. Frontend Setup
+
+#### 2.3.1. Creating Vite + React Project
+1. Create a new Vite project with React template:
+```bash
+npm create vite@latest medical-portal --template react
+cd medical-portal
+```
+
+2. Initialize the project:
+```bash
+npm install
+```
+
+#### 2.3.2. Dependency Installation
+Install required dependencies:
+```bash
+npm install @microsoft/signalr @tanstack/react-query axios react-router-dom
+npm install @mui/material @emotion/react @emotion/styled
+npm install date-fns prop-types react-hook-form
+npm install -D prettier eslint-config-prettier vitest @testing-library/react msw
+```
+
+#### 2.3.3. Project Structure Configuration
+Frontend project structure:
+```plaintext
+src/
+├── assets/            # Static assets (images, fonts)
+├── components/        # Reusable UI components
+│   ├── common/        # Shared components (buttons, inputs, etc.)
+│   ├── features/      # Feature-specific components
+│   └── layouts/       # Layout components (headers, footers, etc.)
+├── config/           # Configuration files
+├── contexts/         # React context providers
+├── hooks/            # Custom React hooks
+├── pages/            # Page components for each route
+│   ├── patient/      # Patient-specific pages
+│   ├── doctor/       # Doctor-specific pages
+│   └── admin/        # Admin-specific pages
+├── services/         # API service wrappers
+├── utils/            # Utility functions
+└── App.jsx          # Main application component
+```
+
+#### 2.3.4. Environment Variables Setup
+Environment configuration files:
+```plaintext
+# .env.development
+VITE_API_URL=http://localhost:5000
+VITE_SIGNALR_URL=http://localhost:5000/hubs
+
+# .env.production
+VITE_API_URL=https://api.medical-portal.com
+VITE_SIGNALR_URL=https://api.medical-portal.com/hubs
+```
+
+#### 2.3.5. Vite Configuration
+Configure `vite.config.js`:
+```javascript
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+      '/hubs': {
+        target: 'http://localhost:5000',
+        ws: true,
+      },
+    },
+  },
+});
+```
+
+### 2.4. Database Setup
+
+#### 2.4.1. SQL Server Setup (Docker)
+1. Pull SQL Server Docker image:
+```bash
+docker pull mcr.microsoft.com/mssql/server:2022-latest
+```
+
+2. Run SQL Server container:
+```bash
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=YourStrongPassword123" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
+```
+
+#### 2.4.2. MongoDB Setup (Docker)
+1. Pull MongoDB Docker image:
+```bash
+docker pull mongo:latest
+```
+
+2. Run MongoDB container:
+```bash
+docker run -d -p 27017:27017 --name mongodb mongo:latest
+```
+
+#### 2.4.3. Database Connection Configuration
+1. SQL Server connection string (appsettings.json):
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=MedicalPortal;User Id=sa;Password=YourStrongPassword123;TrustServerCertificate=True"
+  }
+}
+```
+
+2. MongoDB connection string (appsettings.json):
+```json
+{
+  "MongoDb": {
+    "ConnectionString": "mongodb://localhost:27017",
+    "DatabaseName": "MedicalPortal"
+  }
+}
+```
+
+### 2.5. Message Broker Setup
+
+#### 2.5.1. RabbitMQ Setup (Docker)
+1. Pull RabbitMQ Docker image with management plugin:
+```bash
+docker pull rabbitmq:3-management
+```
+
+2. Run RabbitMQ container:
+```bash
+docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+```
+
+#### 2.5.2. Accessing RabbitMQ Management UI
+1. Open the management interface in your browser:
+```
+http://localhost:15672
+```
+2. Login with default credentials:
+- Username: guest
+- Password: guest
+
+#### 2.5.3. Configuration for Services
+1. Spring Boot service configuration (application.properties):
+```properties
+spring.rabbitmq.host=localhost
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=guest
+spring.rabbitmq.password=guest
+```
+
+2. .NET service configuration (appsettings.json):
+```json
+{
+  "RabbitMQ": {
+    "HostName": "localhost",
+    "Port": 5672,
+    "UserName": "guest",
+    "Password": "guest"
+  }
+}
+```
+
+### 2.6. Development Tools
+
+#### 2.6.1. IDE Setup
+Configure Visual Studio Code:
+- Install essential extensions for development
+- Set up debugging configurations for all services
+- Configure editor settings for code formatting and linting
+
+#### 2.6.2. Recommended VS Code Extensions
+Essential extensions for development:
+- **Code Quality**:
+  - ESLint and Prettier for code formatting
+  - SonarLint for code analysis
+- **Backend Development**:
+  - C# Dev Kit for .NET development
+  - REST Client for API testing
+- **Frontend Development**:
+  - ES7+ React/Redux/React-Native snippets
+  - Vite for frontend tooling
+- **Database Tools**:
+  - MongoDB for VS Code
+  - SQL Server for VS Code
+- **Infrastructure**:
+  - Docker for container management
+  - Kubernetes for deployment
+- **Version Control**:
+  - GitLens for enhanced Git integration
+  - Git History for visualization
+- **Collaboration**:
+  - Live Share for pair programming
+  - Remote Development for containerized dev
+
+#### 2.6.3. Git Configuration and .gitignore Setup
+1. Configure Git user settings:
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
+2. Create .gitignore file:
+```plaintext
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Testing
+coverage/
+
+# Production
+build/
+dist/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# .NET
+bin/
+obj/
+*.user
+*.userosscache
+*.dbmdl
+*.jfm
+
+# Java
+target/
+.settings/
+.classpath
+.project
+*.jar
+*.war
+```
+
+### 2.7. Local Development
+
+#### 2.7.1. Starting Infrastructure with Docker Compose
+1. Create `docker-compose.yml` to manage infrastructure services:
+```yaml
+version: '3.8'
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrongPassword123
+    ports:
+      - "1433:1433"
+  
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+  
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+```
+
+2. Start all infrastructure services:
+```bash
+docker-compose up -d
+```
+
+#### 2.7.2. Starting Backend Services
+1. Start Spring Boot services:
+```bash
+# From user-service directory
+./mvnw spring-boot:run
+
+# From auth-service directory
+./mvnw spring-boot:run
+```
+
+2. Start .NET services:
+```powershell
+# From HealthRecordsService directory
+dotnet run
+```
+
+#### 2.7.3. Starting Frontend Application
+Start the Vite development server:
+```bash
+cd medical-portal
+npm run dev
+```
+
+#### 2.7.4. Accessing Service URLs
+- Frontend: http://localhost:3000
+- API Gateway: http://localhost:5000
+- User Service: http://localhost:8081
+- Auth Service: http://localhost:8082
+- Health Records Service: http://localhost:5001
+- RabbitMQ Management: http://localhost:15672
+
+#### 2.7.5. Debugging and Logging Setup
+1. Configure VS Code debugging for .NET:
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Core Launch (web)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/bin/Debug/net8.0/HealthRecordsService.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      }
+    }
+  ]
+}
+```
+
+2. Configure VS Code debugging for Node.js:
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Frontend",
+      "program": "${workspaceFolder}/node_modules/vite/bin/vite.js",
+      "args": ["--mode", "development"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}
+```
+## 3. System Architecture
+
+### 3.1. High-Level Architecture
+
+#### 3.1.1. Architecture Diagram
+The system's high-level architecture is represented in the following diagram:
+
+```
++---------------------------------------------------------------+
+|                  Frontend (React, Vite)                       |
++---------------+---------------+-----------------------------+
+| Patient Portal | Doctor Portal | Admin Dashboard             |
++---------------+---------------+-----------------------------+
+                                 | HTTPS (TLS 1.3)
+                                 v
++---------------------------------------------------------------+
+|           Load Balancer (AWS ALB/Azure Gateway)                |
++-------------------------+-----------------------------------+
+                          |
++-------------------------v-----------------------------------+
+|               API Gateway (Spring Cloud)                      |
+|           (REST, GraphQL, Rate Limiting, HSTS)                |
++------+------------+------------+------------+----------------+
+       |            |            |            |
++------v------+ +---v--------+ +-v---------+ +-v----------+
+|Auth Service | |User Profile| |Health     | |Notification|
+|(Spring Boot)| |Service     | |Records    | |Service     |
+|RBAC:        | |(Spring Boot| |Service    | |(.NET Core) |
+|Patient/     | |SQL Server) | |(.NET Core)| |MongoDB     |
+|Doctor/Admin | +------------+ +------------+ +------------+
++-------------+
+       +---------------+      +---------------+      +---------------+
+       | Case Service  |      | Billing Service|      | Admin Service |
+       | (Spring Boot) |      | (.NET Core)    |      | (Spring Boot) |
+       | SQL Server    |      | SQL Server     |      | SQL Server    |
+       +---------------+      +---------------+      +---------------+
+                          |
++-------------------------v-----------------------------------+
+|                 Shared Infrastructure                        |
++------------+------------+------------+------------+---------+
+|Redis       |Elastic-    |Cloud       |Message     |Identity |
+|(Caching)   |search      |Storage     |Broker      |Provider |
+|            |(Logs)      |(S3/Blob)   |(RabbitMQ)  |(OAuth2) |
++------------+------------+------------+------------+---------+
+                          |
++-------------------------v-----------------------------------+
+|              Monitoring & Observability                      |
++------------+------------+------------+----------------------+
+|Prometheus  |Grafana     |Jaeger      |PagerDuty/Slack       |
+|(Metrics)   |(Dashboards |(Tracing)   |(Alerts)              |
++------------+------------+------------+----------------------+
+```
+
+#### 3.1.2. Component Overview
+The Medical Portal implements a modern, cloud-native distributed system architecture that ensures scalability, maintainability, and security.
+
+##### Frontend Layer
+- **Patient Portal**: Self-service interface for viewing health records, appointments, and billing
+- **Doctor Portal**: Clinical interface for managing patient records and treatment plans
+- **Admin Dashboard**: System management interface for settings and reporting
+
+##### API Gateway Layer
+- **Spring Cloud Gateway**: Central entry point for all client requests
+- Implements routing, authentication, rate limiting
+- Supports REST and GraphQL interfaces
+- Enforces security policies and HSTS
+
+##### Core Services
+- **Auth Service** (Spring Boot):
+  - User authentication and RBAC
+  - JWT token management
+  - OAuth2/OpenID Connect integration
+  
+- **User Profile Service** (Spring Boot):
+  - Profile management for all user types
+  - SQL Server for structured data storage
+  - Business logic for user management
+  
+- **Health Records Service** (.NET):
+  - Medical records management
+  - Document handling with privacy controls
+  - HIPAA-compliant data access
+  
+- **Notification Service** (.NET):
+  - Real-time notifications via SignalR
+  - MongoDB for flexible notification storage
+  - Event-driven architecture
+
+- **Additional Services**:
+  - Case Service (Spring Boot)
+  - Billing Service (.NET)
+  - Admin Service (Spring Boot)
+
+##### Infrastructure Layer
+- Redis for caching
+- Elasticsearch for centralized logging
+- Cloud Storage (S3/Blob) for documents
+- RabbitMQ for event-driven communication
+- OAuth2 provider for authentication
+
+##### Monitoring Layer
+- Prometheus for metrics collection
+- Grafana for visualization dashboards
+- Jaeger for distributed tracing
+- PagerDuty/Slack for alerts
+
+#### 3.1.3. Technology Stack Summary
+
+##### Frontend Technologies
+- React with Vite for build tooling
+- SignalR client for real-time features
+- React Query for data fetching
+- Material-UI for components
+- Axios for HTTP requests
+- React Router for navigation
+- PropTypes for type checking
+
+##### Backend Technologies
+- **Java Services**:
+  - Spring Boot 3.1.x
+  - Spring Data JPA
+  - Spring Security
+  - Spring Cloud Gateway
+  - JJWT
+  - Spring AMQP
+  
+- **.NET Services**:
+  - .NET 7.0
+  - ASP.NET Core
+  - Entity Framework Core
+  - SignalR
+  - RabbitMQ.Client
+  - Swashbuckle.AspNetCore
+
+##### Data Storage
+- SQL Server for transactional data
+- MongoDB for flexible schemas
+- Redis for caching
+- S3/Blob storage for files
+
+##### Infrastructure & DevOps
+- Docker and Kubernetes
+- GitHub Actions/Azure DevOps
+- ELK/EFK stack for logging
+- Prometheus/Grafana monitoring
+
+##### Security & API
+- OAuth2/OpenID Connect
+- JWT authentication
+- AES encryption
+- TLS/mTLS
+- OpenAPI/Swagger
+- Protobuf for gRPC
+
+### 3.2. Design Patterns & Best Practices
+
+#### 3.2.1. Microservices Independence
+Each microservice in the Medical Portal is designed to be independently deployable and maintainable:
+- Separate databases and schemas
+- Independent technology stacks (Java/Spring Boot and .NET)
+- Clear service boundaries and responsibilities
+- Event-driven communication for loose coupling
+
+#### 3.2.2. Saga Pattern for Transactions
+Implementation of the Saga pattern for distributed transactions:
+- Choreography-based approach using events
+- Compensation transactions for rollback
+- State tracking for long-running processes
+- Error handling and recovery mechanisms
+
+#### 3.2.3. Outbox Pattern for Events
+The Outbox pattern ensures reliable event publishing:
+- Events stored in service database
+- Background process for event publishing
+- Idempotency for message handling
+- Dead letter queue for failed events
+
+#### 3.2.4. Event Choreography
+Event-driven communication between services:
+- Domain events for state changes
+- Event subscription for dependent services
+- Asynchronous processing
+- Event schema versioning
+
+#### 3.2.5. Idempotency and Retry Handling
+Robust error handling and retry mechanisms:
+- Unique request IDs for deduplication
+- Retry policies with exponential backoff
+- Circuit breakers for failing services
+- Dead letter queues for failed messages
+
+### 3.3. System Integration
+
+#### 3.3.1. Service Communication Protocols
+The Medical Portal uses multiple communication protocols to enable efficient service-to-service interaction:
+
+- **REST APIs**: Used for synchronous request-response communication between services and with the frontend.
+  - JSON payloads for data exchange
+  - HTTP status codes for error handling
+  - OpenAPI/Swagger for documentation
+
+- **gRPC**: Used for high-performance, low-latency internal service communication.
+  - Protocol Buffers for efficient serialization
+  - Bi-directional streaming capabilities
+  - Code generation for type safety
+
+- **Message Broker (RabbitMQ/Kafka)**: Used for asynchronous, event-driven communication.
+  - Publish-subscribe pattern for event distribution
+  - Message queues for work distribution
+  - Dead letter queues for error handling
+
+#### 3.3.2. External Integrations
+The system integrates with external services and systems:
+
+- **Identity Providers**: OAuth2/OpenID Connect for authentication
+- **Payment Gateways**: For billing and payment processing
+- **Cloud Storage**: For document storage and retrieval
+- **Notification Services**: For SMS and email delivery
+
+#### 3.3.3. API Gateway Functionality
+The API Gateway serves as the entry point for all client requests:
+
+- **Request Routing**: Routes requests to appropriate services
+- **Authentication**: Validates JWT tokens
+- **Rate Limiting**: Prevents abuse
+- **Request Transformation**: Modifies requests as needed
+- **Response Aggregation**: Combines responses from multiple services
+- **Circuit Breaking**: Prevents cascading failures
+- **Logging and Monitoring**: Tracks request metrics
+
+#### 3.3.4. Event Management
+Event-driven architecture for asynchronous communication:
+
+- **Event Types**:
+  - Domain Events (e.g., `UserCreated`, `AppointmentScheduled`)
+  - Integration Events (e.g., `NotificationSent`)
+  - Command Events (e.g., `ProcessPayment`)
+
+- **Event Flow**:
+  1. Service performs action and publishes event
+  2. Event is stored in outbox table
+  3. Background process publishes event to message broker
+  4. Consuming services process event and update their state
+
+### 3.4. Service-to-Service Communication
+
+#### 3.4.1. Synchronous Communication
+Direct service-to-service communication:
+
+- **REST APIs**:
+  - Used for request-response patterns
+  - HTTP status codes for error handling
+  - Retry mechanisms for transient failures
+
+- **gRPC**:
+  - Used for performance-critical operations
+  - Strong typing with Protocol Buffers
+  - Streaming capabilities for real-time data
+
+#### 3.4.2. Asynchronous Communication
+Event-based communication for loose coupling:
+
+- **Message Broker (RabbitMQ/Kafka)**:
+  - Publish-subscribe for event distribution
+  - Message queues for work distribution
+  - Topic-based routing for selective consumption
+
+- **Event Patterns**:
+  - Event Notification: Simple notification of state changes
+  - Event-Carried State Transfer: Events contain full state
+  - Event Sourcing: Events as the source of truth
+
+#### 3.4.3. Service Discovery and Load Balancing
+Mechanisms for service discovery and load balancing:
+
+- **Kubernetes Service Discovery**:
+  - DNS-based service discovery
+  - Service registry for endpoint management
+  - Health checks for availability monitoring
+
+- **Load Balancing**:
+  - Client-side load balancing with resilience patterns
+  - Server-side load balancing with Kubernetes services
+  - Algorithm: Round-robin for even distribution
+
+#### 3.4.4. Interoperability Standards
+Standards for ensuring interoperability between services:
+
+- **Data Formats**:
+  - JSON for REST APIs
+  - Protocol Buffers for gRPC
+  - Avro for event schemas
+
+- **API Contracts**:
+  - OpenAPI/Swagger for REST APIs
+  - Protocol Buffers for gRPC
+  - Consumer-driven contracts with Pact
+
+- **Versioning**:
+  - API versioning (e.g., `/api/v1/users`)
+  - Event schema versioning
+  - Backward compatibility requirements
+
+### 3.5. API Gateway Configuration
+
+#### 3.5.1. Routing Configuration
+Configuration for request routing in the API Gateway:
+
+- **Path-Based Routing**:
+  - `/api/users/**` → User Profile Service
+  - `/api/auth/**` → Authentication Service
+  - `/api/health-records/**` → Health Records Service
+  - `/api/notifications/**` → Notification Service
+
+- **Header-Based Routing**:
+  - Content-Type header for format selection
+  - Accept-Language header for localization
+
+#### 3.5.2. Authentication and Authorization
+Security configuration in the API Gateway:
+
+- **JWT Validation**:
+  - Token signature verification
+  - Expiration checking
+  - Role and scope validation
+
+- **Authorization Rules**:
+  - Role-based access control
+  - Scope-based permissions
+  - Resource ownership validation
+
+#### 3.5.3. Rate Limiting and Throttling
+Protection against abuse and overload:
+
+- **Rate Limiting**:
+  - Request limits per client (e.g., 100 requests per minute)
+  - Token bucket algorithm for rate control
+  - Custom limits for different endpoints
+
+- **Throttling**:
+  - Gradual request reduction under load
+  - Priority-based throttling for critical operations
+  - Retry-After headers for client guidance
+
+#### 3.5.4. Protocol Translation
+Support for multiple protocols and formats:
+
+- **REST to gRPC**: Translating REST requests to gRPC calls
+- **GraphQL to REST**: Resolving GraphQL queries to REST API calls
+- **Content Negotiation**: Supporting multiple response formats (JSON, XML)
+## 4. Backend Services Development
+
+### 4.1. Core Services
+
+#### 4.1.1. Authentication Service
+
+##### 4.1.1.1. User Authentication Implementation
+- **Description**: The Authentication Service handles user login, session management, and authentication workflows using OAuth2 and JWT.
+- **Implementation**: Implements REST endpoints to authenticate users and issue JWT tokens upon successful login.
+- **Example**:
+  ```java
+  @RestController
+  @RequestMapping("/auth")
+  public class AuthController {
+      @PostMapping("/login")
+      public ResponseEntity<String> login(@RequestBody LoginRequest request) {
+          // Authenticate user and generate JWT
+          String jwt = authService.authenticate(request.getUsername(), request.getPassword());
+          return ResponseEntity.ok(jwt);
+      }
+  }
+  ```
+  The `LoginRequest` class contains fields for `username` and `password`, and the `authService` validates credentials against the database, generating a JWT upon success.
+
+##### 4.1.1.2. JWT Token Management
+- **Description**: Manages the creation, validation, and refresh of JWT tokens for secure user sessions.
+- **Implementation**: Uses the `jjwt-api` library to generate and verify JWT tokens, with claims including user ID, roles, and expiration.
+- **Dependencies**: `spring-boot-starter-security`, `io.jsonwebtoken:jjwt-api:0.11.5`.
+- **Process**:
+  - Generate JWT tokens with a secret key and configured issuer/audience.
+  - Validate tokens in each service via a security filter.
+  - Support token refresh endpoints to extend session validity.
+
+##### 4.1.1.3. Role-Based Access Control
+- **Description**: Implements role-based access control (RBAC) to restrict access to resources based on user roles (e.g., DOCTOR, PATIENT).
+- **Implementation**: Configures Spring Security to enforce role-based access on API endpoints.
+- **Example**:
+  ```java
+  @Configuration
+  public class SecurityConfig {
+      @Bean
+      public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+          http.authorizeRequests()
+              .antMatchers("/api/users/**").hasRole("DOCTOR")
+              .antMatchers("/api/patients/**").hasRole("PATIENT")
+              .and().oauth2ResourceServer().jwt();
+          return http.build();
+      }
+  }
+  ```
+  This configuration restricts `/api/users/**` to users with the `DOCTOR` role and `/api/patients/**` to users with the `PATIENT` role.
+
+#### 4.1.2. User Profile Service (Spring Boot)
+
+##### 4.1.2.1. Profile Management
+- **Description**: Manages CRUD operations for user profiles, including personal details, qualifications (for doctors), and contact information.
+- **Implementation**: Provides REST endpoints for creating, reading, updating, and deleting user profiles.
+- **Example**:
+  ```java
+  @RestController
+  @RequestMapping("/api/users")
+  public class UserController {
+      @Autowired
+      private UserService userService;
+
+      @PostMapping
+      public ResponseEntity<User> createUser(@RequestBody User user) {
+          return ResponseEntity.ok(userService.createUser(user));
+      }
+  }
+  ```
+
+##### 4.1.2.2. Data Models
+- **Description**: Defines data models for users, including fields for identification, roles, and profile details.
+- **Implementation**:
+  ```java
+  @Entity
+  public class User {
+      @Id
+      private String id;
+      private String email;
+      private String role; // DOCTOR or PATIENT
+      private String firstName;
+      private String lastName;
+      private String qualifications; // Applicable for doctors
+  }
+  ```
+  The `User` entity is mapped to a SQL Server table using Spring Data JPA.
+
+##### 4.1.2.3. Business Logic Implementation
+- **Description**: Implements business logic for profile validation, role assignment, and data updates.
+- **Dependencies**: `spring-boot-starter-data-jpa`, `com.microsoft.sqlserver:mssql-jdbc`.
+- **Implementation**:
+  ```java
+  @Service
+  public class UserService {
+      @Autowired
+      private UserRepository userRepository;
+
+      public User createUser(User user) {
+          // Validate user data
+          if (!isValidEmail(user.getEmail())) {
+              throw new IllegalArgumentException("Invalid email");
+          }
+          // Assign default role if not specified
+          if (user.getRole() == null) {
+              user.setRole("PATIENT");
+          }
+          return userRepository.save(user);
+      }
+
+      private boolean isValidEmail(String email) {
+          // Email validation logic
+          return email != null && email.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
+      }
+  }
+  ```
+
+#### 4.1.3. Health Records Service (.NET)
+
+##### 4.1.3.1. Medical Records Management
+- **Description**: Manages the creation, retrieval, and updating of medical records, ensuring secure access and storage.
+- **Implementation**: Provides REST endpoints for managing health records, using Entity Framework Core for database operations.
+- **Example**:
+  ```csharp
+  [Route("api/health-records")]
+  public class HealthRecordsController : ControllerBase {
+      private readonly HealthRecordService _service;
+
+      public HealthRecordsController(HealthRecordService service) {
+          _service = service;
+      }
+
+      [HttpGet("{id}")]
+      public async Task<IActionResult> GetRecord(string id) {
+          var record = await _service.GetRecordAsync(id);
+          return record != null ? Ok(record) : NotFound();
+      }
+  }
+  ```
+
+##### 4.1.3.2. Document Handling
+- **Description**: Supports secure storage and retrieval of medical documents (e.g., test results, prescriptions).
+- **Implementation**: Uses blob storage (e.g., Azure Blob Storage, AWS S3) for documents, with metadata stored in SQL Server.
+- **Process**:
+  - Upload documents via a dedicated endpoint, storing them in blob storage.
+  - Store document metadata (e.g., ID, patient ID, upload date) in SQL Server.
+  - Retrieve documents using secure URLs with time-limited access tokens.
+
+##### 4.1.3.3. Privacy Controls
+- **Description**: Implements HIPAA-compliant privacy controls to restrict access to medical records.
+- **Implementation**:
+  - Enforce role-based access (e.g., only doctors assigned to a patient can access their records).
+  - Use encryption for data at rest (AES) and in transit (TLS).
+  - Log all access attempts for audit purposes, stored in Elasticsearch.
+
+#### 4.1.4. Notification Service (.NET)
+
+##### 4.1.4.1. Real-Time Notifications
+- **Description**: Delivers real-time notifications to users for events like appointment updates or case status changes.
+- **Implementation**: Uses SignalR for WebSocket-based communication, integrated with MongoDB for notification history.
+- **Dependencies**: `Microsoft.AspNetCore.SignalR`.
+
+##### 4.1.4.2. SignalR Implementation
+- **Description**: Implements a SignalR hub to push notifications to specific users or groups.
+- **Implementation**:
+  ```csharp
+  public class NotificationHub : Hub {
+      public async Task SendNotification(string userId, string message) {
+          await Clients.User(userId).SendAsync("ReceiveNotification", message);
+      }
+  }
+  ```
+  The hub sends notifications to a specific user identified by `userId`, triggered by backend events.
+
+##### 4.1.4.3. Event Processing
+- **Description**: Processes events from RabbitMQ/Kafka to trigger notifications.
+- **Implementation**:
+  - Subscribe to events (e.g., `CaseUpdated`, `AppointmentScheduled`) via RabbitMQ/Kafka.
+  - Map events to user-specific notifications and push via SignalR.
+  - Store notification details in MongoDB for history and auditing.
+
+#### 4.1.5. Additional Domain Services
+
+##### 4.1.5.1. Case Management Service
+- **Description**: Manages medical cases, including creation, assignment to doctors, and status updates.
+- **Implementation**: Can be implemented in Java (Spring Boot) or .NET, with REST endpoints for CRUD operations and event publishing for status changes.
+
+##### 4.1.5.2. Billing Service
+- **Description**: Handles invoicing and payment processing for medical services.
+- **Implementation**: Integrates with external payment gateways (e.g., Stripe) and stores billing records in SQL Server.
+
+##### 4.1.5.3. Report Service
+- **Description**: Generates analytics reports and PDF documents for medical data.
+- **Implementation**: Uses a reporting library (e.g., JasperReports for Java, Crystal Reports for .NET) and stores reports in blob storage.
+
+##### 4.1.5.4. Document Service
+- **Description**: Manages non-medical documents (e.g., administrative forms) with secure storage and access controls.
+- **Implementation**: Similar to the Health Records Service, uses blob storage with metadata in SQL Server or MongoDB.
+
+### 4.2. Service Implementation
+
+#### 4.2.1. Development Guidelines
+- **Standards**: Follow REST/gRPC standards for API design, adhering to Google Java Style Guide for Spring Boot and Microsoft C# guidelines for .NET.
+- **Code Structure**: Organize code into layers (controller, service, repository) for maintainability.
+- **Documentation**: Use Javadoc for Java and XML comments for C# to document APIs and methods.
+- **Version Control**: Use Git with feature branches, pull requests, and code reviews.
+
+#### 4.2.2. Error Handling Strategies
+- **Implementation**:
+  - Return standardized error responses (e.g., HTTP 400 for bad requests, 401 for unauthorized).
+  - Use exception handlers to centralize error processing.
+  - Example (Spring Boot):
+    ```java
+    @RestControllerAdvice
+    public class GlobalExceptionHandler {
+        @ExceptionHandler(IllegalArgumentException.class)
+        public ResponseEntity<String> handleIllegalArgument(IllegalArgumentException ex) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+        }
+    }
+    ```
+- **.NET Example**:
+  ```csharp
+  public class GlobalExceptionMiddleware {
+      public async Task InvokeAsync(HttpContext context, RequestDelegate next) {
+          try {
+              await next(context);
+          } catch (Exception ex) {
+              context.Response.StatusCode = 500;
+              await context.Response.WriteAsync("Internal Server Error");
+          }
+      }
+  }
+  ```
+
+#### 4.2.3. Logging Implementation
+- **Implementation**:
+  - Use SLF4J with Logback in Spring Boot and Serilog in .NET for logging.
+  - Configure centralized logging with ELK/EFK stack for production.
+  - Log levels: DEBUG for development, INFO for production, ERROR for exceptions.
+- **Example** (Spring Boot):
+  ```yaml
+  logging:
+    level:
+      org.springframework: DEBUG
+      com.medical: INFO
+  ```
+- **.NET Example** (appsettings.json):
+  ```json
+  {
+    "Serilog": {
+      "MinimumLevel": {
+        "Default": "Information",
+        "Override": {
+          "Microsoft": "Warning"
+        }
+      }
+    }
+  }
+  ```
+
+#### 4.2.4. Performance Optimization
+- **Strategies**:
+  - Use caching (e.g., Redis) for frequently accessed data.
+  - Optimize database queries with indexing and batch processing.
+  - Implement asynchronous processing for non-critical tasks (e.g., notification delivery).
+  - Monitor performance with Prometheus and Grafana to identify bottlenecks.
+
+### 4.3. Data Consistency Strategies
+
+#### 4.3.1. Distributed Transaction Handling
+
+##### 4.3.1.1. Saga Pattern Implementation
+- **Description**: Uses the Saga pattern to manage distributed transactions across services, ensuring eventual consistency.
+- **Implementation**: Each service performs its transaction and publishes an event to trigger the next step.
+- **Example**: User creation involves saving the user in the User Service, publishing a `UserCreated` event, and triggering a notification in the Notification Service.
+
+##### 4.3.1.2. Outbox Pattern Implementation
+- **Description**: Ensures reliable event publishing by storing events in a database table before sending to the message broker.
+- **Implementation**:
+  ```java
+  @Transactional
+  public void createUser(User user) {
+      userRepository.save(user);
+      outboxRepository.save(new OutboxEvent("UserCreated", user.getId()));
+  }
+  ```
+  A background process polls the outbox table and publishes events to RabbitMQ/Kafka.
+
+##### 4.3.1.3. Event Choreography
+- **Description**: Services react to events independently, reducing coupling.
+- **Implementation**: Services subscribe to events (e.g., `CaseUpdated`) via RabbitMQ/Kafka and process them without direct service calls.
+- **Example**: The Notification Service processes `CaseUpdated` events to send notifications.
+
+#### 4.3.2. Idempotency and Retry Handling
+- **Description**: Ensures APIs and event handlers can handle retries without duplicate processing.
+- **Implementation**:
+  - Use unique request/event IDs to detect duplicates.
+  - Store processed IDs in a database (e.g., SQL Server, MongoDB).
+  - Configure RabbitMQ/Kafka with dead-letter queues for failed messages.
+
+#### 4.3.3. Database Event Propagation
+- **Description**: Propagates database changes as events to other services.
+- **Implementation**: Use the Outbox pattern to store events in the database, then publish to RabbitMQ/Kafka.
+- **Example**: A change in a user's profile triggers a `ProfileUpdated` event.
+
+#### 4.3.4. Message Broker Integration
+- **Description**: Integrates services with RabbitMQ (primary) or Kafka for asynchronous communication.
+- **Implementation**:
+  - Spring Boot: Use `spring-boot-starter-amqp` for RabbitMQ.
+  - .NET: Use `RabbitMQ.Client` or `Confluent.Kafka`.
+  - Configure queues/topics for specific events (e.g., `user.created`, `case.updated`).
+
+#### 4.3.5. Schema Evolution and Versioning
+- **Description**: Manages schema changes for events to ensure backward compatibility.
+- **Implementation**:
+  - Use Avro or JSON schemas for event payloads.
+  - Store schemas in a registry (e.g., Confluent Schema Registry for Kafka).
+  - Support versioned schemas with backward-compatible changes (e.g., adding optional fields).
+
+### 4.4. API Documentation & Contracts
+
+#### 4.4.1. OpenAPI/Swagger Integration
+- **Description**: Documents REST APIs using OpenAPI/Swagger for clarity and accessibility.
+- **Implementation**:
+  - **Spring Boot**: Use `springdoc-openapi-starter-webmvc-ui`.
+  - **.NET**: Use `Swashbuckle.AspNetCore`.
+- **Example** (.NET):
+  ```csharp
+  builder.Services.AddSwaggerGen(c => {
+      c.SwaggerDoc("v1", new OpenApiInfo { Title = "HealthRecords API", Version = "v1" });
+  });
+  ```
+- **Access**: Swagger UI available at `/swagger-ui.html` (Spring Boot) or `/swagger` (.NET).
+
+#### 4.4.2. gRPC Protobuf Schemas
+- **Description**: Defines gRPC service contracts using Protocol Buffers (Protobuf).
+- **Implementation**: Create `.proto` files for services, compiled into Java and C# code.
+- **Example**:
+  ```proto
+  syntax = "proto3";
+  service AuthService {
+      rpc ValidateToken (TokenRequest) returns (TokenResponse);
+  }
+  message TokenRequest {
+      string token = 1;
+  }
+  message TokenResponse {
+      bool isValid = 1;
+  }
+  ```
+
+#### 4.4.3. Contract Testing with Pact
+- **Description**: Uses Pact for contract testing to ensure compatibility between services and clients.
+- **Implementation**: Define consumer-driven contracts for APIs, validated in CI/CD pipelines.
+- **Process**:
+  - Consumers define expected API responses.
+  - Providers validate against these contracts using Pact.
+
+#### 4.4.4. API Versioning and Deprecation
+- **Description**: Manages API versions to support backward compatibility and graceful deprecation.
+- **Implementation**:
+  - Use URL versioning (e.g., `/api/v1/users`) for REST APIs.
+  - Deprecate old versions with clear documentation and migration guides.
+  - Support multiple versions concurrently during transition periods.
+
+#### 4.4.5. Request/Response Examples
+- **Description**: Provides sample requests and responses for API documentation.
+- **Example** (User Service - Create User):
+  - **Request**:
+    ```json
+    {
+      "email": "user@example.com",
+      "firstName": "John",
+      "lastName": "Doe",
+      "role": "PATIENT"
+    }
+    ```
+  - **Response**:
+    ```json
+    {
+      "id": "12345",
+      "email": "user@example.com",
+      "firstName": "John",
+      "lastName": "Doe",
+      "role": "PATIENT"
+    }
+    ```
+- **Documentation**: Include examples in Swagger UI and developer portals.
+## 5. Frontend Development
+
+### 5.1. Project Structure
+
+#### 5.1.1. Directory Layout
+```plaintext
+medical-portal/
+├── src/
+│   ├── assets/           # Static assets (images, icons)
+│   ├── components/       # Reusable UI components
+│   │   ├── common/       # Shared components (buttons, inputs)
+│   │   ├── features/     # Feature-specific components
+│   │   └── routing/      # Navigation components
+│   ├── config/          # Configuration files
+│   ├── hooks/           # Custom React hooks
+│   ├── lib/             # Third-party library wrappers
+│   ├── pages/           # Page components
+│   │   ├── patient/     # Patient-specific pages
+│   │   ├── doctor/      # Doctor-specific pages
+│   │   └── admin/       # Admin-specific pages
+│   ├── services/        # API service wrappers
+│   ├── store/           # State management
+│   ├── types/           # TypeScript type definitions
+│   └── utils/           # Utility functions
+└── tests/
+    ├── unit/            # Unit tests
+    └── integration/     # Integration tests
+```
+
+The frontend application follows a modular and maintainable structure that supports scalability and component reuse. The structure is organized to separate concerns and promote clean code practices.
+
+- **assets/**: Contains static assets such as images, fonts, and stylesheets.
+- **components/**: Houses reusable React components, divided into subdirectories for common, feature-specific, and routing components.
+- **config/**: Stores configuration files, such as API client settings.
+- **hooks/**: Contains custom React hooks for reusable logic.
+- **lib/**: Includes library integrations, such as SignalR and API clients.
+- **pages/**: Defines page-level components for routing.
+- **services/**: Contains API service wrappers for HTTP requests.
+- **store/**: Manages global state (e.g., using Redux or Zustand).
+- **types/**: Stores PropTypes definitions for type checking.
+- **utils/**: Contains utility functions for common tasks.
+
+#### 5.1.2. Feature-Based Organization
+- **Description**: Components and related code are organized by feature (e.g., notifications, chat, appointments) to enhance modularity and scalability.
+- **Implementation**:
+  - Each feature directory under `src/components/features/` contains components, hooks, and services specific to that feature.
+  - Example: The `notifications` feature includes components for displaying notifications, hooks for real-time updates, and services for fetching notification data.
+- **Benefits**:
+  - Simplifies maintenance by grouping related functionality.
+  - Facilitates feature-based development and testing.
+  - Reduces coupling between different parts of the application.
+
+#### 5.1.3. Component Hierarchy with PropTypes
+- **Description**: Components are structured hierarchically, with PropTypes used for type checking to ensure robust and predictable data handling.
+- **Implementation**:
+  - Parent components (e.g., page components) orchestrate child components (e.g., UI elements, feature-specific components).
+  - PropTypes are defined for all component props to validate data types and shapes.
+- **Example** (Notification Component with PropTypes):
+  ```javascript
+  import PropTypes from 'prop-types';
+  import React from 'react';
+
+  const NotificationItem = ({ notification }) => {
+    return (
+      <div>
+        <p>{notification.message}</p>
+        <small>{notification.timestamp}</small>
+      </div>
+    );
+  };
+
+  NotificationItem.propTypes = {
+    notification: PropTypes.shape({
+      message: PropTypes.string.isRequired,
+      timestamp: PropTypes.string.isRequired,
+    }).isRequired,
+  };
+
+  export default NotificationItem;
+  ```
+  This component validates that `notification` is an object with required `message` and `timestamp` strings.
+
+### 5.2. Real-Time Integration with SignalR
+
+#### 5.2.1. SignalR Client Setup
+- **Description**: Configures the SignalR client to enable real-time communication with the Notification Service.
+- **Implementation**: Uses the `@microsoft/signalr` library to establish a WebSocket connection to the Notification Hub.
+- **Example**:
+  ```javascript
+  // src/lib/signalr.js
+  import { HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
+
+  export class SignalRClient {
+    constructor() {
+      this.hubConnection = new HubConnectionBuilder()
+        .withUrl(`${import.meta.env.VITE_SIGNALR_URL}/notificationHub`)
+        .withAutomaticReconnect()
+        .configureLogging(LogLevel.Information)
+        .build();
+    }
+
+    async start() {
+      await this.hubConnection.start();
+    }
+
+    onNotification(callback) {
+      this.hubConnection.on('ReceiveNotification', callback);
+    }
+
+    async stop() {
+      await this.hubConnection.stop();
+    }
+  }
+  ```
+  This JavaScript code initializes a SignalR connection, connects to the notification hub, and sets up a listener for notifications.
+
+#### 5.2.2. Custom Hook for SignalR
+- **Description**: Provides a custom React hook to manage SignalR connections and handle real-time events.
+- **Implementation**:
+  ```javascript
+  // src/hooks/useSignalR.js
+  import { useEffect, useRef } from 'react';
+  import { SignalRClient } from '../lib/signalr';
+  import PropTypes from 'prop-types';
+
+  export const useSignalR = (onNotification) => {
+    const signalRClient = useRef(new SignalRClient());
+
+    useEffect(() => {
+      signalRClient.current.start().catch((err) => console.error('SignalR Connection Error:', err));
+
+      signalRClient.current.onNotification(onNotification);
+
+      return () => {
+        signalRClient.current.stop();
+      };
+    }, [onNotification]);
+
+    return { subscribe: (event, callback) => signalRClient.current.on(event, callback) };
+  };
+
+  useSignalR.propTypes = {
+    onNotification: PropTypes.func.isRequired,
+  };
+  ```
+  This hook initializes the SignalR client, starts the connection, and subscribes to the `ReceiveNotification` event, cleaning up on component unmount.
+
+#### 5.2.3. Notification Handling
+- **Description**: Handles incoming notifications from the SignalR hub and updates the UI in real-time.
+- **Implementation**: Uses the `useSignalR` hook to listen for notifications and trigger UI updates.
+- **Example**:
+  ```javascript
+  // src/components/features/notifications/NotificationList.js
+  import React, { useState } from 'react';
+  import { useSignalR } from '../../hooks/useSignalR';
+  import PropTypes from 'prop-types';
+
+  const NotificationList = () => {
+    const [notifications, setNotifications] = useState([]);
+
+    const handleNotification = (notification) => {
+      setNotifications((prev) => [...prev, notification]);
+    };
+
+    useSignalR(handleNotification);
+
+    return (
+      <div>
+        {notifications.map((notification, index) => (
+          <div key={index}>
+            <p>{notification.message}</p>
+            <small>{notification.timestamp}</small>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  NotificationList.propTypes = {
+    notifications: PropTypes.arrayOf(
+      PropTypes.shape({
+        message: PropTypes.string.isRequired,
+        timestamp: PropTypes.string.isRequired,
+      })
+    ),
+  };
+
+  export default NotificationList;
+  ```
+  This component listens for notifications via SignalR and renders them in a list, using PropTypes for validation.
+
+#### 5.2.4. Chat Feature Implementation
+- **Description**: Implements real-time chat functionality for doctor-patient communication.
+- **Implementation**: Uses SignalR to send and receive chat messages, with messages stored in MongoDB for persistence.
+- **Example**:
+  ```javascript
+  // src/components/features/chat/Chat.js
+  import React, { useState, useEffect } from 'react';
+  import { SignalRClient } from '../../lib/signalr';
+  import PropTypes from 'prop-types';
+
+  const Chat = ({ userId }) => {
+    const [messages, setMessages] = useState([]);
+    const signalRClient = new SignalRClient();
+
+    useEffect(() => {
+      signalRClient.start().then(() => {
+        signalRClient.on('ReceiveMessage', (message) => {
+          setMessages((prev) => [...prev, message]);
+        });
+      });
+
+      return () => signalRClient.stop();
+    }, []);
+
+    const sendMessage = async (text) => {
+      await signalRClient.hubConnection.invoke('SendMessage', userId, text);
+    };
+
+    return (
+      <div>
+        {messages.map((msg, index) => (
+          <div key={index}>{msg.text}</div>
+        ))}
+        <input type="text" onKeyPress={(e) => e.key === 'Enter' && sendMessage(e.target.value)} />
+      </div>
+    );
+  };
+
+  Chat.propTypes = {
+    userId: PropTypes.string.isRequired,
+  };
+
+  export default Chat;
+  ```
+  This component enables users to send and receive chat messages in real-time, with PropTypes ensuring `userId` is provided.
+
+#### 5.2.5. Appointment Updates
+- **Description**: Handles real-time updates for appointment scheduling and status changes.
+- **Implementation**: Listens for appointment-related events via SignalR and updates the UI accordingly.
+- **Example**:
+  ```javascript
+  // src/components/features/appointments/AppointmentList.js
+  import React, { useState } from 'react';
+  import { useSignalR } from '../../hooks/useSignalR';
+  import PropTypes from 'prop-types';
+
+  const AppointmentList = () => {
+    const [appointments, setAppointments] = useState([]);
+
+    const handleAppointmentUpdate = (appointment) => {
+      setAppointments((prev) => [...prev.filter((a) => a.id !== appointment.id), appointment]);
+    };
+
+    useSignalR(handleAppointmentUpdate);
+
+    return (
+      <div>
+        {appointments.map((appointment) => (
+          <div key={appointment.id}>
+            <p>{appointment.title}</p>
+            <p>{appointment.time}</p>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  AppointmentList.propTypes = {
+    appointments: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        time: PropTypes.string.isRequired,
+      })
+    ),
+  };
+
+  export default AppointmentList;
+  ```
+  This component updates the appointment list in real-time based on SignalR events, with PropTypes for validation.
+
+### 5.3. Data Fetching with React Query
+
+#### 5.3.1. API Client Configuration
+- **Description**: Configures an Axios-based API client for making HTTP requests to the backend.
+- **Implementation**:
+  ```javascript
+  // src/lib/api.js
+  import axios from 'axios';
+
+  const api = axios.create({
+    baseURL: import.meta.env.VITE_API_URL,
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  api.interceptors.request.use((config) => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  });
+
+  export default api;
+  ```
+  This API client adds JWT tokens to requests and uses the configured `VITE_API_URL`.
+
+#### 5.3.2. Custom Hooks for Data Fetching
+- **Description**: Creates custom React hooks using React Query to fetch and manage data.
+- **Implementation**:
+  ```javascript
+  // src/hooks/useNotifications.js
+  import { useQuery } from '@tanstack/react-query';
+  import api from '../lib/api';
+  import PropTypes from 'prop-types';
+
+  export const useNotifications = () => {
+    return useQuery({
+      queryKey: ['notifications'],
+      queryFn: () => api.get('/notifications').then((res) => res.data),
+    });
+  };
+
+  useNotifications.propTypes = {
+    queryKey: PropTypes.array,
+    queryFn: PropTypes.func,
+  };
+  ```
+  This hook fetches notifications and caches them using React Query, with PropTypes for query configuration.
+
+#### 5.3.3. Cache Management
+- **Description**: Uses React Query to manage data caching and reduce redundant API calls.
+- **Implementation**:
+  - Configure cache settings in the React Query client.
+  - Invalidate caches when real-time updates are received via SignalR.
+- **Example**:
+  ```javascript
+  // src/lib/queryClient.js
+  import { QueryClient } from '@tanstack/react-query';
+
+  export const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 5 * 60 * 1000, // Cache data for 5 minutes
+        cacheTime: 10 * 60 * 1000, // Keep cache for 10 minutes
+      },
+    },
+  });
+  ```
+  This configuration sets cache durations to optimize performance.
+
+#### 5.3.4. Error Handling in Queries
+- **Description**: Handles errors in API requests using React Query's error management.
+- **Implementation**:
+  - Display user-friendly error messages.
+  - Retry failed requests with exponential backoff.
+- **Example**:
+  ```javascript
+  // src/components/features/notifications/NotificationList.js
+  import React from 'react';
+  import { useNotifications } from '../../hooks/useNotifications';
+  import PropTypes from 'prop-types';
+
+  const NotificationList = () => {
+    const { data, error, isLoading } = useNotifications();
+
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error.message}</div>;
+
+    return (
+      <div>
+        {data.map((notification, index) => (
+          <div key={index}>
+            <p>{notification.message}</p>
+            <small>{notification.timestamp}</small>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  NotificationList.propTypes = {
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        message: PropTypes.string.isRequired,
+        timestamp: PropTypes.string.isRequired,
+      })
+    ),
+    error: PropTypes.object,
+    isLoading: PropTypes.bool,
+  };
+
+  export default NotificationList;
+  ```
+  This component handles loading and error states for notifications, with PropTypes for validation.
+
+### 5.4. Component Architecture
+
+#### 5.4.1. Common Components
+- **Description**: Reusable UI components used across the application (e.g., buttons, modals, forms).
+- **Implementation**:
+  - Use Material-UI for consistent styling.
+  - Example: A reusable button component with PropTypes:
+    ```javascript
+    // src/components/common/Button.js
+    import React from 'react';
+    import PropTypes from 'prop-types';
+    import { Button as MuiButton } from '@mui/material';
+
+    const Button = ({ label, onClick, disabled }) => {
+      return (
+        <MuiButton onClick={onClick} disabled={disabled} variant="contained">
+          {label}
+        </MuiButton>
+      );
+    };
+
+    Button.propTypes = {
+      label: PropTypes.string.isRequired,
+      onClick: PropTypes.func.isRequired,
+      disabled: PropTypes.bool,
+    };
+
+    export default Button;
+    ```
+
+#### 5.4.2. Feature-Specific Components
+- **Description**: Components tailored to specific features, such as notifications, chat, or appointments.
+- **Implementation**: Organized in `src/components/features/` (e.g., `notifications/NotificationList.js`, `chat/Chat.js`).
+- **Example**: See NotificationList (5.2.3) and Chat (5.2.4) components.
+
+#### 5.4.3. Routing Components
+- **Description**: Components for navigation, using `react-router-dom`.
+- **Implementation**:
+  ```javascript
+  // src/components/routing/AppRouter.js
+  import React from 'react';
+  import { BrowserRouter, Routes, Route } from 'react-router-dom';
+  import NotificationList from '../features/notifications/NotificationList';
+  import Chat from '../features/chat/Chat';
+  import PropTypes from 'prop-types';
+
+  const AppRouter = () => {
+    return (
+      <BrowserRouter>
+        <Routes>
+          <Route path="/notifications" element={<NotificationList />} />
+          <Route path="/chat" element={<Chat userId="user123" />} />
+        </Routes>
+      </BrowserRouter>
+    );
+  };
+
+  AppRouter.propTypes = {
+    path: PropTypes.string,
+    element: PropTypes.element,
+  };
+
+  export default AppRouter;
+  ```
+  This component defines routes for the application, with PropTypes for route validation.
+
+#### 5.4.4. State Management Components
+- **Description**: Manages global state for shared data (e.g., user info, notifications).
+- **Implementation**: Uses React Context or a library like Redux/Zustand for state management.
+- **Example** (Context-based state):
+  ```javascript
+  // src/store/UserContext.js
+  import React, { createContext, useState } from 'react';
+  import PropTypes from 'prop-types';
+
+  export const UserContext = createContext();
+
+  const UserProvider = ({ children }) => {
+    const [user, setUser] = useState(null);
+
+    return (
+      <UserContext.Provider value={{ user, setUser }}>
+        {children}
+      </UserContext.Provider>
+    );
+  };
+
+  UserProvider.propTypes = {
+    children: PropTypes.node.isRequired,
+  };
+
+  export default UserProvider;
+  ```
+  This context manages user state across the application.
+
+### 5.5. Environment Configuration
+
+#### 5.5.1. Environment Variables
+- **Description**: Defines environment-specific variables for API and SignalR URLs.
+- **Implementation**:
+  ```plaintext
+  # .env.development
+  VITE_API_URL=http://localhost:5000
+  VITE_SIGNALR_URL=http://localhost:5000/hubs
+
+  # .env.production
+  VITE_API_URL=https://api.medical-portal.com
+  VITE_SIGNALR_URL=https://api.medical-portal.com/hubs
+  ```
+  These files configure endpoints for development and production environments.
+
+#### 5.5.2. Vite Proxy Configuration
+- **Description**: Configures Vite to proxy API and SignalR requests to the backend.
+- **Implementation**:
+  ```javascript
+  // vite.config.js
+  import { defineConfig } from 'vite';
+  import react from '@vitejs/plugin-react';
+
+  export default defineConfig({
+    plugins: [react()],
+    server: {
+      proxy: {
+        '/api': {
+          target: 'http://localhost:5000',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, ''),
+        },
+        '/hubs': {
+          target: 'http://localhost:5000',
+          ws: true,
+        },
+      },
+    },
+  });
+  ```
+  This configuration proxies API requests and WebSocket connections to the backend.
+
+#### 5.5.3. Production vs Development Setup
+- **Development**:
+  - Uses `http://localhost:5000` for API and SignalR.
+  - Enables hot module replacement (HMR) via Vite.
+  - Configures verbose logging for debugging.
+- **Production**:
+  - Uses `https://api.medical-portal.com` for secure connections.
+  - Optimizes builds with minification and tree-shaking.
+  - Disables debug logging and enables production-grade security headers.
+## 6. Security Implementation
+
+### 6.1. Authentication & Authorization
+
+#### 6.1.1. OAuth2/OpenID Connect Setup
+- **Description**: The Authentication Service implements OAuth2 with OpenID Connect (OIDC) to provide secure user authentication and single sign-on (SSO) capabilities.
+- **Implementation**:
+  - Uses Spring Security's OAuth2 resource server for Java services and ASP.NET Core Authentication for .NET services.
+  - Integrates with an identity provider (e.g., Keycloak, Auth0) for user authentication.
+- **Configuration** (Spring Boot):
+  ```java
+  @Configuration
+  public class SecurityConfig {
+      @Bean
+      public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+          http
+              .authorizeRequests()
+              .anyRequest().authenticated()
+              .and()
+              .oauth2ResourceServer()
+              .jwt();
+          return http.build();
+      }
+  }
+  ```
+- **Configuration** (.NET):
+  ```csharp
+  builder.Services.AddAuthentication(options =>
+  {
+      options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+      options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+  }).AddJwtBearer(options =>
+  {
+      options.Authority = "https://your-identity-provider.com";
+      options.Audience = "medical-portal-api";
+  });
+  ```
+- **Process**:
+  - Users authenticate via the identity provider, receiving an access token (JWT).
+  - The API Gateway validates tokens before routing requests to services.
+  - OIDC provides user profile information (e.g., email, roles) via ID tokens.
+
+#### 6.1.2. JWT Token Management
+- **Description**: Manages the creation, validation, and storage of JSON Web Tokens (JWT) for secure user sessions.
+- **Implementation**:
+  - **Spring Boot**: Uses `io.jsonwebtoken:jjwt-api:0.11.5` to generate and verify JWTs.
+  - **.NET**: Uses `System.IdentityModel.Tokens.Jwt` for JWT handling.
+- **Example** (Spring Boot - JWT Generation):
+  ```java
+  @Service
+  public class JwtService {
+      private final String secret = "your-secret-key";
+      private final long expirationMs = 3600000; // 1 hour
+
+      public String generateToken(String username, List<String> roles) {
+          return Jwts.builder()
+              .setSubject(username)
+              .claim("roles", roles)
+              .setIssuedAt(new Date())
+              .setExpiration(new Date(System.currentTimeMillis() + expirationMs))
+              .signWith(Keys.hmacShaKeyFor(secret.getBytes()))
+              .compact();
+      }
+  }
+  ```
+- **Process**:
+  - Tokens include claims for user ID, roles, issuer, audience, and expiration.
+  - Validation occurs at the API Gateway and individual services using a shared secret or public key.
+  - Tokens are stored in client-side local storage (for the frontend) and passed in the `Authorization` header.
+
+#### 6.1.3. Role-Based Access Control
+- **Description**: Implements role-based access control (RBAC) to restrict access to resources based on user roles (e.g., DOCTOR, PATIENT).
+- **Implementation**:
+  - Roles are embedded in JWT claims and validated by services.
+  - Spring Security and ASP.NET Core enforce role-based restrictions on endpoints.
+- **Example** (Spring Boot):
+  ```java
+  @RestController
+  @RequestMapping("/api/health-records")
+  public class HealthRecordController {
+      @GetMapping("/{id}")
+      @PreAuthorize("hasRole('DOCTOR')")
+      public ResponseEntity<HealthRecord> getRecord(@PathVariable String id) {
+          return ResponseEntity.ok(healthRecordService.findById(id));
+      }
+  }
+  ```
+- **Example** (.NET):
+  ```csharp
+  [Authorize(Roles = "DOCTOR")]
+  [HttpGet("{id}")]
+  public async Task<IActionResult> GetRecord(string id)
+  {
+      var record = await _healthRecordService.GetRecordAsync(id);
+      return record != null ? Ok(record) : NotFound();
+  }
+  ```
+- **Roles**:
+  - **DOCTOR**: Access to patient records, case management, and reporting.
+  - **PATIENT**: Access to personal health records and appointment scheduling.
+
+#### 6.1.4. Token Refresh and Revocation
+- **Description**: Supports refreshing JWT tokens to extend sessions and revoking tokens to invalidate sessions.
+- **Implementation**:
+  - **Refresh Tokens**: Issued alongside access tokens, stored in a secure database (e.g., SQL Server).
+  - **Revocation**: Maintains a blacklist of revoked tokens in Redis or SQL Server.
+- **Example** (Spring Boot - Refresh Token Endpoint):
+  ```java
+  @PostMapping("/auth/refresh")
+  public ResponseEntity<String> refreshToken(@RequestBody RefreshTokenRequest request) {
+      String newAccessToken = authService.refreshToken(request.getRefreshToken());
+      return ResponseEntity.ok(newAccessToken);
+  }
+  ```
+- **Process**:
+  - Clients request a new access token using a valid refresh token.
+  - Revoked tokens are checked against the blacklist before processing requests.
+  - Refresh tokens have a longer expiration (e.g., 7 days) than access tokens (e.g., 1 hour).
+
+### 6.2. Data Security
+
+#### 6.2.1. Encryption Methods
+- **Description**: Implements encryption to protect data at rest and in transit.
+- **Implementation**:
+  - **Data at Rest**: Uses AES-256 encryption for sensitive data stored in SQL Server and MongoDB.
+  - **Data in Transit**: Enforces TLS 1.3 for all network communications, including service-to-service and client-to-service interactions.
+- **Example** (Spring Boot - AES Encryption):
+  ```java
+  @Service
+  public class EncryptionService {
+      private final String key = "your-32-byte-key"; // 256-bit key
+      private final Cipher cipher = Cipher.getInstance("AES");
+
+      public String encrypt(String data) throws Exception {
+          cipher.init(Cipher.ENCRYPT_MODE, new SecretKeySpec(key.getBytes(), "AES"));
+          byte[] encrypted = cipher.doFinal(data.getBytes());
+          return Base64.getEncoder().encodeToString(encrypted);
+      }
+  }
+  ```
+- **.NET Example**:
+  ```csharp
+  public class EncryptionService
+  {
+      private readonly byte[] key = Convert.FromBase64String("your-32-byte-key");
+      public string Encrypt(string data)
+      {
+          using var aes = Aes.Create();
+          aes.Key = key;
+          var encryptor = aes.CreateEncryptor();
+          byte[] encrypted = encryptor.TransformFinalBlock(Encoding.UTF8.GetBytes(data), 0, data.Length);
+          return Convert.ToBase64String(encrypted);
+      }
+  }
+  ```
+
+#### 6.2.2. Data Privacy Measures
+- **Description**: Implements measures to protect user data privacy, particularly for sensitive health information.
+- **Implementation**:
+  - **Data Minimization**: Collect and store only necessary data.
+  - **Access Controls**: Restrict data access to authorized users via RBAC.
+  - **Data Anonymization**: Anonymize data for analytics and reporting when possible.
+  - **Secure Storage**: Store sensitive data (e.g., health records) in encrypted form.
+
+#### 6.2.3. HIPAA Compliance Requirements
+- **Description**: Ensures compliance with the Health Insurance Portability and Accountability Act (HIPAA) for protecting patient data.
+- **Implementation**:
+  - **Data Protection**: Encrypt all Protected Health Information (PHI) at rest and in transit.
+  - **Access Logging**: Log all access to PHI in Elasticsearch with Index Lifecycle Management (ILM) for retention.
+  - **Audit Trails**: Maintain audit logs for all data modifications, accessible for compliance audits.
+  - **User Consent**: Implement mechanisms to obtain and record user consent for data processing.
+  - **Security Policies**: Enforce policies for data handling, access control, and incident response.
+
+#### 6.2.4. Security Auditing
+- **Description**: Conducts regular audits to identify and address security vulnerabilities.
+- **Implementation**:
+  - **Automated Scans**: Use tools like OWASP ZAP or Snyk to scan for vulnerabilities in code and dependencies.
+  - **Penetration Testing**: Perform quarterly penetration tests to simulate attacks.
+  - **Audit Logs**: Centralize logs in the ELK/EFK stack for real-time monitoring and analysis.
+  - **Compliance Checks**: Regular reviews to ensure HIPAA compliance, focusing on encryption, access controls, and audit trails.
+
+### 6.3. API Security
+
+#### 6.3.1. API Authentication
+- **Description**: Secures API endpoints using JWT-based authentication via the API Gateway.
+- **Implementation**:
+  - The API Gateway validates JWT tokens before forwarding requests to services.
+  - Services verify tokens independently for additional security.
+- **Example** (Spring Cloud Gateway):
+  ```yaml
+  spring:
+    cloud:
+      gateway:
+        routes:
+          - id: user-service
+            uri: lb://user-service
+            predicates:
+              - Path=/api/users/**
+            filters:
+              - AddRequestHeader=Authorization, Bearer ${token}
+  ```
+
+#### 6.3.2. Rate Limiting Implementation
+- **Description**: Prevents abuse by limiting the number of API requests per client.
+- **Implementation**:
+  - Uses Spring Cloud Gateway's rate limiter or Redis for distributed rate limiting.
+  - Configures limits based on client IP or user ID.
+- **Example** (Spring Cloud Gateway):
+  ```yaml
+  spring:
+    cloud:
+      gateway:
+        routes:
+          - id: user-service
+            uri: lb://user-service
+            predicates:
+              - Path=/api/users/**
+            filters:
+              - RateLimiter=100,1m
+  ```
+  This configuration limits requests to 100 per minute per client.
+
+#### 6.3.3. Input Validation
+- **Description**: Validates all API inputs to prevent injection attacks and invalid data.
+- **Implementation**:
+  - Use validation libraries like Hibernate Validator (Spring Boot) and Data Annotations (.NET).
+  - Sanitize inputs to prevent SQL injection, XSS, and other attacks.
+- **Example** (Spring Boot):
+  ```java
+  public class UserRequest {
+      @NotBlank
+      @Email
+      private String email;
+
+      @NotBlank
+      @Size(min = 8)
+      private String password;
+  }
+  ```
+- **.NET Example**:
+  ```csharp
+  public class UserRequest
+  {
+      [Required]
+      [EmailAddress]
+      public string Email { get; set; }
+
+      [Required]
+      [MinLength(8)]
+      public string Password { get; set; }
+  }
+  ```
+
+#### 6.3.4. Security Headers
+- **Description**: Configures HTTP security headers to enhance API security.
+- **Implementation**:
+  - **Headers**:
+    - `Content-Security-Policy`: Restricts sources of content.
+    - `X-Content-Type-Options: nosniff`: Prevents MIME-type sniffing.
+    - `X-Frame-Options: DENY`: Prevents clickjacking.
+    - `Strict-Transport-Security`: Enforces HTTPS.
+  - **Spring Boot Example**:
+    ```java
+    @Configuration
+    public class WebSecurityConfig {
+        @Bean
+        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+            http.headers()
+                .contentSecurityPolicy("default-src 'self'")
+                .and()
+                .frameOptions().deny()
+                .and()
+                .httpStrictTransportSecurity().maxAgeInSeconds(31536000);
+            return http.build();
+        }
+    }
+    ```
+  - **.NET Example**:
+    ```csharp
+    app.Use(async (context, next) =>
+    {
+        context.Response.Headers.Add("Content-Security-Policy", "default-src 'self'");
+        context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
+        context.Response.Headers.Add("X-Frame-Options", "DENY");
+        context.Response.Headers.Add("Strict-Transport-Security", "max-age=31536000");
+        await next();
+    });
+    ```
