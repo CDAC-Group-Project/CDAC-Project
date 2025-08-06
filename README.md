@@ -21,7 +21,7 @@ This guide outlines the steps to create a Medical Portal project with a React fr
    - Execute:
      ```bash
      yarn add @microsoft/signalr @tanstack/react-query axios react-router-dom
-     yarn add @mui/material @emotion/react @emotion/styled
+     yarn add bootstrap @popperjs/core react-bootstrap
      yarn add date-fns prop-types react-hook-form
      yarn add --dev prettier eslint-config-prettier vitest @testing-library/react msw
      ```
@@ -95,7 +95,17 @@ This guide outlines the steps to create a Medical Portal project with a React fr
      });
      ```
 
-6. **Run the Development Server**:
+6. **Import Bootstrap**:
+   - Add Bootstrap CSS import to your `src/main.jsx` file:
+     ```javascript
+     import 'bootstrap/dist/css/bootstrap.min.css';
+     ```
+   - Add Bootstrap JS import (for interactive components) to your `src/main.jsx` file after the CSS import:
+     ```javascript
+     import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+     ```
+
+7. **Run the Development Server**:
    - Start the Vite development server to verify the setup.
    - Run:
      ```bash
@@ -112,7 +122,9 @@ The following dependencies are required for the React frontend:
   - `@tanstack/react-query`: Data fetching and caching for API interactions.
   - `axios`: HTTP client for API requests.
   - `react-router-dom`: Client-side routing for navigation.
-  - `@mui/material`, `@emotion/react`, `@emotion/styled`: Material-UI components for consistent UI.
+  - `bootstrap`: Core Bootstrap framework for responsive UI components.
+  - `@popperjs/core`: Required for Bootstrap's dropdowns, popovers, and tooltips.
+  - `react-bootstrap`: React components built on top of Bootstrap.
   - `date-fns`: Date and time handling for scheduling features.
   - `prop-types`: Runtime type checking for React component props.
   - `react-hook-form`: Form management and validation.
@@ -126,7 +138,7 @@ The following dependencies are required for the React frontend:
 
 - **Yarn Command**:
   ```bash
-  yarn add @microsoft/signalr @tanstack/react-query axios react-router-dom @mui/material @emotion/react @emotion/styled date-fns prop-types react-hook-form
+  yarn add @microsoft/signalr @tanstack/react-query axios react-router-dom bootstrap @popperjs/core react-bootstrap date-fns prop-types react-hook-form
   yarn add --dev prettier eslint-config-prettier vitest @testing-library/react msw
   ```
 
